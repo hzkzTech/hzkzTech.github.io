@@ -7,7 +7,7 @@ date_format: "ordinal"
 title: 含章可贞
 subtitle: "含章可贞，或从王事，无成有终"
 description: "含章的个人博客"
-keywords: 含章,hanzhang,CV,hzkz
+keywords: 含章, hanzhang, CV, hzkz
 timezone: Asia/Shanghai
 encoding: "utf-8"
 repository: hzkzTech/hzkzTech.github.io
@@ -48,12 +48,12 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
+author: Hanzhang Lu
 organization: 
 organization_url: 
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+github_username: hzkzTech
+location: Tianjin, China
+email: lu_hanzhang@qq.com
 
 # ---------------- #
 #    Navigation    #
@@ -130,7 +130,7 @@ disqus:
     username: 
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: 
+    owner: hzkzTech
     repo: blog-comments
     oauth:
         client_id: 
