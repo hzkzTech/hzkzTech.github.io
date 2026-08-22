@@ -1,256 +1,14 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 8.1.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="Action Quality Assessment 动作质量评价调研鲁含章 1. Dataset1.1. 竞技体操数据集FineGym: 竞技体操数据集,仅动作分类url: https:&#x2F;&#x2F;sdolivia.github.io&#x2F;FineGym&#x2F;e.g. 12345&#123;youtube_VIDEO_ID&#125;_E_&#123;大项目开始时间戳&#125;_&#123;大项目结束时间戳&amp;#">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2026/08/14/20260814/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Action Quality Assessment 动作质量评价调研鲁含章 1. Dataset1.1. 竞技体操数据集FineGym: 竞技体操数据集,仅动作分类url: https:&#x2F;&#x2F;sdolivia.github.io&#x2F;FineGym&#x2F;e.g. 12345&#123;youtube_VIDEO_ID&#125;_E_&#123;大项目开始时间戳&#125;_&#123;大项目结束时间戳&amp;#">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-9.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-4.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-1.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-2.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-3.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-5.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-8.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-6.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-7.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-10.png">
-<meta property="og:image" content="http://example.com/2026/08/14/20260814/image-11.png">
-<meta property="article:published_time" content="2026-08-14T06:49:05.199Z">
-<meta property="article:modified_time" content="2026-08-22T08:10:36.729Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2026/08/14/20260814/image.png">
-
-<link rel="canonical" href="http://example.com/2026/08/14/20260814/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title> | Hexo</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/08/14/20260814/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2026-08-14 14:49:05" itemprop="dateCreated datePublished" datetime="2026-08-14T14:49:05+08:00">2026-08-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-08-22 16:10:36" itemprop="dateModified" datetime="2026-08-22T16:10:36+08:00">2026-08-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <h1 id="Action-Quality-Assessment-动作质量评价调研"><a href="#Action-Quality-Assessment-动作质量评价调研" class="headerlink" title="Action Quality Assessment 动作质量评价调研"></a>Action Quality Assessment 动作质量评价调研</h1><p>鲁含章</p>
-<h2 id="1-Dataset"><a href="#1-Dataset" class="headerlink" title="1. Dataset"></a>1. Dataset</h2><h3 id="1-1-竞技体操数据集"><a href="#1-1-竞技体操数据集" class="headerlink" title="1.1. 竞技体操数据集"></a>1.1. 竞技体操数据集</h3><p><strong>FineGym</strong>: 竞技体操数据集,仅动作分类<br>url: <a target="_blank" rel="noopener" href="https://sdolivia.github.io/FineGym/">https://sdolivia.github.io/FineGym/</a><br><img src="/2026/08/14/20260814/image.png" alt="imageinsert"><br>e.g.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;youtube_VIDEO_ID&#125;_E_&#123;大项目开始时间戳&#125;_&#123;大项目结束时间戳&#125;_A_&#123;子动作开始时间戳&#125;_&#123;子动作开始时间戳&#125; &#123;动作分类(99类和288类)&#125;</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0003_0005 240</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0006_0008 266</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0012_0013 271</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title></title>
+    <url>/2026/08/14/20260814/</url>
+    <content><![CDATA[<h1 id="Action-Quality-Assessment-动作质量评价调研"><a href="#Action-Quality-Assessment-动作质量评价调研" class="headerlink" title="Action Quality Assessment 动作质量评价调研"></a>Action Quality Assessment 动作质量评价调研</h1><p>鲁含章</p>
+<h2 id="1-Dataset"><a href="#1-Dataset" class="headerlink" title="1. Dataset"></a>1. Dataset</h2><h3 id="1-1-竞技体操数据集"><a href="#1-1-竞技体操数据集" class="headerlink" title="1.1. 竞技体操数据集"></a>1.1. 竞技体操数据集</h3><p><strong>FineGym</strong>: 竞技体操数据集,仅动作分类<br>url: <a href="https://sdolivia.github.io/FineGym/">https://sdolivia.github.io/FineGym/</a><br><img src="/2026/08/14/20260814/image.png" alt="imageinsert"><br>e.g.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;youtube_VIDEO_ID&#125;_E_&#123;大项目开始时间戳&#125;_&#123;大项目结束时间戳&#125;_A_&#123;子动作开始时间戳&#125;_&#123;子动作开始时间戳&#125; &#123;动作分类(99类和288类)&#125;</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0003_0005 240</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0006_0008 266</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0012_0013 271</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>FineGym-AQA</strong>：FineGym基础上加入E分执行分</p>
-<p>url: <a target="_blank" rel="noopener" href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
+<p>url: <a href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
 <blockquote>
 <p>FineGym‑AQA 标注流水线总览。使用 YOLOv5、EasyOCR 检测识别运动员号码布；基于规则脚本解析官方 PDF 成绩册，提取运动员姓名、D 难度分、E 完成分、ND 中立扣分、T 总分。专家二次核验保证号码布‑分数匹配正确、项目标注一致。</p>
 </blockquote>
@@ -274,8 +32,8 @@
 </li>
 <li>name &#x2F; number: athlete metadata when available</li>
 </ul>
-<p>e.g.: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=0jqn1vxdhls">https://www.youtube.com/watch?v=0jqn1vxdhls</a></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;0jqn1vxdhls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;E_000133_000140&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;event&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">133.56</span><span class="punctuation">,</span> <span class="number">140.68</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Jordyn Wieber&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;number&quot;</span><span class="punctuation">:</span> <span class="string">&quot;8&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;score&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;diff&quot;</span><span class="punctuation">:</span> <span class="number">6.5</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;execution&quot;</span><span class="punctuation">:</span> <span class="number">9.6</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;nd&quot;</span><span class="punctuation">:</span> <span class="number">0.0</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">16.1</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;segments&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;A_0000_0007&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;stages&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">0.04</span><span class="punctuation">,</span> <span class="number">3.49</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">3.49</span><span class="punctuation">,</span> <span class="number">4.70</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">4.70</span><span class="punctuation">,</span> <span class="number">7.11</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;6.50&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>e.g.: <a href="https://www.youtube.com/watch?v=0jqn1vxdhls">https://www.youtube.com/watch?v=0jqn1vxdhls</a></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;0jqn1vxdhls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;E_000133_000140&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;event&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">133.56</span><span class="punctuation">,</span> <span class="number">140.68</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Jordyn Wieber&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;number&quot;</span><span class="punctuation">:</span> <span class="string">&quot;8&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;score&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;diff&quot;</span><span class="punctuation">:</span> <span class="number">6.5</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;execution&quot;</span><span class="punctuation">:</span> <span class="number">9.6</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;nd&quot;</span><span class="punctuation">:</span> <span class="number">0.0</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">16.1</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;segments&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;A_0000_0007&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;stages&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">0.04</span><span class="punctuation">,</span> <span class="number">3.49</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">3.49</span><span class="punctuation">,</span> <span class="number">4.70</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">4.70</span><span class="punctuation">,</span> <span class="number">7.11</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;6.50&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="1-2-其他"><a href="#1-2-其他" class="headerlink" title="1.2. 其他"></a>1.2. 其他</h3><p>总结来自IJCV2026综述：</p>
 <table>
@@ -298,7 +56,7 @@
 <td>~2.5s</td>
 <td>Score</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td><a href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
 <td>短时跳水视频及裁判质量分，是早期视频 AQA 的经典回归基准。</td>
 </tr>
 <tr>
@@ -308,7 +66,7 @@
 <td>~175s</td>
 <td>Score</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td><a href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
 <td>长时花样滑冰节目与总体得分，适合研究长时序评分。</td>
 </tr>
 <tr>
@@ -318,7 +76,7 @@
 <td>~92s</td>
 <td>Score, Action</td>
 <td>Surgery</td>
-<td><a target="_blank" rel="noopener" href="https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/">项目页</a></td>
+<td><a href="https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/">项目页</a></td>
 <td>达芬奇机器人手术的缝合、打结、穿针任务；含手势片段和全局技能评分，并提供视频与运动学数据。</td>
 </tr>
 <tr>
@@ -328,7 +86,7 @@
 <td>~3.8s</td>
 <td>Score</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td><a href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
 <td>跳水动作视频与评分；可用于和 MIT-Dive、MTL-AQA 做跨数据集验证。</td>
 </tr>
 <tr>
@@ -338,7 +96,7 @@
 <td>~2.8s</td>
 <td>Score</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td><a href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
 <td>竞技体操跳马短片及质量分，是与体操主任务最直接相关的早期公开 AQA 集。</td>
 </tr>
 <tr>
@@ -358,7 +116,7 @@
 <td>~86.6s</td>
 <td>Rank, Action</td>
 <td>Daily</td>
-<td><a target="_blank" rel="noopener" href="https://epic-kitchens.github.io/BEST">项目页</a></td>
+<td><a href="https://epic-kitchens.github.io/BEST">项目页</a></td>
 <td>日常程序性任务的技能排序与动作标签；重点是相对质量而非体育裁判分。</td>
 </tr>
 <tr>
@@ -368,7 +126,7 @@
 <td>~6.7s</td>
 <td>Score, Action</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td><a href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
 <td>覆盖多个竞技运动项目的质量分与动作类别，是多项目 AQA 的传统泛化基准。</td>
 </tr>
 <tr>
@@ -378,7 +136,7 @@
 <td>~4.1s</td>
 <td>Score, Action, Desc.</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/ParitoshParmar/MTL-AQA">项目页</a></td>
+<td><a href="https://github.com/ParitoshParmar/MTL-AQA">项目页</a></td>
 <td>跳水 AQA 数据集；除得分和动作类型外还含描述性监督，适合多任务质量评估。</td>
 </tr>
 <tr>
@@ -388,7 +146,7 @@
 <td>~170s</td>
 <td>Score</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/chmxu/MS_LSTM">项目页</a></td>
+<td><a href="https://github.com/chmxu/MS_LSTM">项目页</a></td>
 <td>花样滑冰长视频与质量评分，用于长时序运动表现建模。</td>
 </tr>
 <tr>
@@ -398,7 +156,7 @@
 <td>~187.6s</td>
 <td>Grade, Rank, Action</td>
 <td>Daily</td>
-<td><a target="_blank" rel="noopener" href="https://epic-kitchens.github.io/BEST">项目页</a></td>
+<td><a href="https://epic-kitchens.github.io/BEST">项目页</a></td>
 <td>日常任务视频，提供等级、相对排序和动作标签，适合排序式 AQA。</td>
 </tr>
 <tr>
@@ -428,7 +186,7 @@
 <td>~95s</td>
 <td>Score, Action</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/qinghuannn/ACTION-NET">项目页</a></td>
+<td><a href="https://github.com/qinghuannn/ACTION-NET">项目页</a></td>
 <td>艺术体操成套动作（球、棒、圈、带等）的评分与动作标签；对体操长节目和难度&#x2F;执行建模很有参考价值。</td>
 </tr>
 <tr>
@@ -438,7 +196,7 @@
 <td>~160fr</td>
 <td>Grade, Difficulty</td>
 <td>Music</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/ParitoshParmar/Piano-Skills-Assessment">项目页</a></td>
+<td><a href="https://github.com/ParitoshParmar/Piano-Skills-Assessment">项目页</a></td>
 <td>钢琴演奏片段的技能等级与曲目难度，适合研究“难度—执行质量”解耦。</td>
 </tr>
 <tr>
@@ -448,7 +206,7 @@
 <td>~103fr</td>
 <td>Grade, Action</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/Shunli-Wang/TSA-Net">项目页</a></td>
+<td><a href="https://github.com/Shunli-Wang/TSA-Net">项目页</a></td>
 <td>花样滑冰动作片段的等级和动作类别，用于细粒度时空质量表征。</td>
 </tr>
 <tr>
@@ -458,7 +216,7 @@
 <td>—</td>
 <td>Score, Action</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/AndyFrancesco29/Audio-Visual-Figure-Skating">项目页</a></td>
+<td><a href="https://github.com/AndyFrancesco29/Audio-Visual-Figure-Skating">项目页</a></td>
 <td>花样滑冰评分与动作标签数据，可用于音视频联合的表现质量分析。</td>
 </tr>
 <tr>
@@ -488,7 +246,7 @@
 <td>~4.1s</td>
 <td>Grade, Action</td>
 <td>Fitness</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/ParitoshParmar/Fitness-AQA">项目页</a></td>
+<td><a href="https://github.com/ParitoshParmar/Fitness-AQA">项目页</a></td>
 <td>大规模健身动作质量等级和动作类别数据，适合预训练姿态—动作质量表示。</td>
 </tr>
 <tr>
@@ -498,7 +256,7 @@
 <td>~4.2s</td>
 <td>Score, Action, Step</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/xujinglin/FineDiving">项目页</a></td>
+<td><a href="https://github.com/xujinglin/FineDiving">项目页</a></td>
 <td>跳水评分数据，含动作类型、步骤类型与时间边界；细粒度过程感知 AQA 的核心基准。</td>
 </tr>
 <tr>
@@ -508,7 +266,7 @@
 <td>~426s</td>
 <td>Score, Action</td>
 <td>Industrial</td>
-<td><a target="_blank" rel="noopener" href="https://assembly-101.github.io/">项目页</a></td>
+<td><a href="https://assembly-101.github.io/">项目页</a></td>
 <td>多视角装配程序视频，含操作动作和质量&#x2F;得分监督，可检验长流程技能迁移。</td>
 </tr>
 <tr>
@@ -518,7 +276,7 @@
 <td>~204.2s</td>
 <td>Score, Action, Form.</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/shiyi-zh0408/LOGO">项目页</a></td>
+<td><a href="https://github.com/shiyi-zh0408/LOGO">项目页</a></td>
 <td>花样游泳数据集，长视频群体动作质量数据，附队形信息，适合研究多人协同和编排质量。</td>
 </tr>
 <tr>
@@ -528,7 +286,7 @@
 <td>~215s</td>
 <td>Score, Action</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/yanliji/FineFS-dataset">项目页</a></td>
+<td><a href="https://github.com/yanliji/FineFS-dataset">项目页</a></td>
 <td>细粒度花样滑冰数据，提供视频、估计骨架及丰富下游标注，适合长时序与姿态质量建模。</td>
 </tr>
 <tr>
@@ -558,7 +316,7 @@
 <td>~2.8s</td>
 <td>Score, Action</td>
 <td>AIGV</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/zijianchen98/GAIA">项目页</a></td>
+<td><a href="https://github.com/zijianchen98/GAIA">项目页</a></td>
 <td>AI 生成的人体动作视频质量数据；用于研究 AQA 在合成伪影与不自然运动下的稳健性。</td>
 </tr>
 <tr>
@@ -568,7 +326,7 @@
 <td>~312s</td>
 <td>Grade, Action</td>
 <td>Daily</td>
-<td><a target="_blank" rel="noopener" href="https://ego-exo4d-data.org/">项目页</a></td>
+<td><a href="https://ego-exo4d-data.org/">项目页</a></td>
 <td>第一&#x2F;第三视角同步的日常技能数据，含任务等级与动作标签，适合跨视角质量评估。</td>
 </tr>
 <tr>
@@ -578,7 +336,7 @@
 <td>~10s</td>
 <td>Rank, Action</td>
 <td>Daily</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/OpenGVLab/EgoExoLearn">项目页</a></td>
+<td><a href="https://github.com/OpenGVLab/EgoExoLearn">项目页</a></td>
 <td>第一、第三视角技能学习任务的相对排序与动作标签，适合跨视角排序式 AQA。</td>
 </tr>
 <tr>
@@ -588,7 +346,7 @@
 <td>~18.8s</td>
 <td>Score, Action, Desc.</td>
 <td>Fitness</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/iSEE-Laboratory/EgoExo-Fitness">项目页</a></td>
+<td><a href="https://github.com/iSEE-Laboratory/EgoExo-Fitness">项目页</a></td>
 <td>第一&#x2F;第三视角全身健身动作，带分数、类别与文字描述，适合多视角和视觉语言质量建模。</td>
 </tr>
 <tr>
@@ -608,7 +366,7 @@
 <td>~28fr</td>
 <td>Score</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/dvanderhaar/uj-aqa-cricketvision">项目页</a></td>
+<td><a href="https://github.com/dvanderhaar/uj-aqa-cricketvision">项目页</a></td>
 <td>板球动作质量评分数据，样本规模较大，适合跨运动的纯视频分数回归与泛化。</td>
 </tr>
 <tr>
@@ -618,7 +376,7 @@
 <td>~500s</td>
 <td>Grade, Action</td>
 <td>Sport</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/yulupan00/BASKET">项目页</a></td>
+<td><a href="https://github.com/yulupan00/BASKET">项目页</a></td>
 <td>大规模篮球技能视频，提供质量等级和动作标签，适合长时序、多事件体育技能评估。</td>
 </tr>
 <tr>
@@ -628,11 +386,11 @@
 <td>~234fr</td>
 <td>Score, Action, Desc., sEMG</td>
 <td>Fitness</td>
-<td><a target="_blank" rel="noopener" href="https://haoyin116.github.io/Survey_of_AQA/">综述页</a></td>
+<td><a href="https://haoyin116.github.io/Survey_of_AQA/">综述页</a></td>
 <td>健身质量数据，融合评分、动作、文本描述与表面肌电（sEMG），适合多模态 AQA 与缺失模态研究。</td>
 </tr>
 </tbody></table>
-<h2 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h2><h3 id="2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions"><a href="#2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions" class="headerlink" title="2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions"></a>2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions</h3><p>homepage: <a target="_blank" rel="noopener" href="https://haoyin116.github.io/Survey_of_AQA/">https://haoyin116.github.io/Survey_of_AQA/</a></p>
+<h2 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h2><h3 id="2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions"><a href="#2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions" class="headerlink" title="2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions"></a>2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions</h3><p>homepage: <a href="https://haoyin116.github.io/Survey_of_AQA/">https://haoyin116.github.io/Survey_of_AQA/</a></p>
 <h4 id="2-1-1-方法分类"><a href="#2-1-1-方法分类" class="headerlink" title="2.1.1 方法分类"></a>2.1.1 方法分类</h4><p><img src="/2026/08/14/20260814/image-4.png" alt="imageinsert"></p>
 <h5 id="统计式方法——有监督学习"><a href="#统计式方法——有监督学习" class="headerlink" title="统计式方法——有监督学习"></a>统计式方法——有监督学习</h5><blockquote>
 <ol>
@@ -791,8 +549,8 @@
 <td>渐进式多模态融合；自适应选择最优融合策略，完成动作质量评估</td>
 </tr>
 </tbody></table>
-<h3 id="2-2-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment"><a href="#2-2-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment" class="headerlink" title="2.2. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment"></a>2.2. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment</h3><p>github：<a target="_blank" rel="noopener" href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
-<p>paper：<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Li_FineGrade_A_Rule-Consistent_Scoring_Framework_for_Fine-Grained_Action_Quality_Assessment_CVPRF_2026_paper.pdf">cvpr2026</a></p>
+<h3 id="2-2-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment"><a href="#2-2-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment" class="headerlink" title="2.2. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment"></a>2.2. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment</h3><p>github：<a href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
+<p>paper：<a href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Li_FineGrade_A_Rule-Consistent_Scoring_Framework_for_Fine-Grained_Action_Quality_Assessment_CVPRF_2026_paper.pdf">cvpr2026</a></p>
 <p><img src="/2026/08/14/20260814/image-7.png" alt="imageinsert"></p>
 <p><img src="/2026/08/14/20260814/image-10.png" alt="imageinsert"><br>视觉主干采用在 Kinetics 预训练的 VST</p>
 <p><strong>论文局限：</strong> FineGym‑AQA 数据集来自官方比赛成绩册。成绩册可以拿到每个动作的 D 价值，但是拿不到每个动作分别扣了多少 E 分，只有整套 E 的最终数字。<br>模型的E分也是在整体上的预测，可解释性存疑。</p>
@@ -831,183 +589,6 @@
 <li><p>Hiteshi Jain, Gaurav Harit, and Avinash Sharma. Action quality assessment using siamese network-based deep metric learning. IEEE Transactions on Circuits and Systems for Video Technology, 31(6):2260–2273, 2021</p>
 </li>
 </ol>
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-
-        
-
-
-        
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Action-Quality-Assessment-%E5%8A%A8%E4%BD%9C%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BB%B7%E8%B0%83%E7%A0%94"><span class="nav-number">1.</span> <span class="nav-text">Action Quality Assessment 动作质量评价调研</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Dataset"><span class="nav-number">1.1.</span> <span class="nav-text">1. Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%AB%9E%E6%8A%80%E4%BD%93%E6%93%8D%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1. 竞技体操数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%85%B6%E4%BB%96"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2. 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Method"><span class="nav-number">1.2.</span> <span class="nav-text">2. Method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E7%BB%BC%E8%BF%B0-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-%E6%96%B9%E6%B3%95%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">2.1.1 方法分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%BC%8F%E6%96%B9%E6%B3%95%E2%80%94%E2%80%94%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">统计式方法——有监督学习</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%A7%84%E5%88%99%E7%9A%84%E6%89%93%E5%88%86"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">基于规则的打分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AQA-%E8%AF%84%E4%BC%B0%E7%9A%84%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7"><span class="nav-number">1.2.1.1.3.</span> <span class="nav-text">AQA 评估的不同层级</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2.1.2 评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Spearman%E2%80%99s-Rank-Correlation-%E8%AE%B0%E4%BD%9C-rho"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">1. Spearman’s Rank Correlation 记作$\rho$</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-Relative-l2-Distance-R-%E2%88%92-l2"><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">2. Relative l2 Distance.(R − l2)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Accuracy"><span class="nav-number">1.2.1.2.3.</span> <span class="nav-text">3. Accuracy</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">2.1.3 数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-4-%E9%83%A8%E5%88%86%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">2.1.4 部分方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-4-1-%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E5%BB%BA%E6%A8%A1%E6%96%B9%E6%B3%95%E4%B8%8E%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.1.4.1.</span> <span class="nav-text">2.1.4.1 不确定性建模方法与对比学习方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-4-2-Multitask-Multimodal-AQA"><span class="nav-number">1.2.1.4.2.</span> <span class="nav-text">2.1.4.2 Multitask &amp; Multimodal AQA</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">3. 局限性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86%E6%9C%89%E5%8F%98%E5%8C%96"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 评分标准有变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E4%B8%BB%E8%A7%82%E5%88%86%E6%95%B0%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 主观分数的不确定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E6%A8%A1%E6%80%81"><span class="nav-number">1.3.4.</span> <span class="nav-text">3.4 模态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-E%E5%88%86%E7%B2%92%E5%BA%A6"><span class="nav-number">1.3.5.</span> <span class="nav-text">3.5 E分粒度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TODOs"><span class="nav-number">1.4.</span> <span class="nav-text">TODOs:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86FingGym-AQA%EF%BC%8C%E5%A4%8D%E7%8E%B0FineGrade"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 下载数据集FingGym-AQA，复现FineGrade</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B5%8B%E8%AF%95%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A0%87%E6%B3%A8FingGym-AQA%E7%BB%86%E7%B2%92%E5%BA%A6E%E5%88%86%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. 测试大模型标注FingGym-AQA细粒度E分的结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AF%BB%E5%90%8E%E9%9D%A2%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E5%BB%BA%E6%A8%A1%E5%92%8C%E5%A4%9A%E6%A8%A1%E6%80%81AQA%E6%96%B9%E6%B3%95%E7%9A%84%E8%AE%BA%E6%96%87"><span class="nav-number">1.4.3.</span> <span class="nav-text">3. 读后面不确定性建模和多模态AQA方法的论文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#others%EF%BC%9A"><span class="nav-number">1.4.4.</span> <span class="nav-text">others：</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2026</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
-</div>
-<!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
--->
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-</body>
-</html>
+]]></content>
+  </entry>
+</search>
