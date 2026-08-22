@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ABOUT</title>
+    <url>/2026/08/22/index/</url>
+    <content><![CDATA[<h2 id="👋-About-Me"><a href="#👋-About-Me" class="headerlink" title="👋 About Me"></a>👋 About Me</h2><p>Hi，我是鲁含章（Hanzhang Lu）✨</p>
+<p>🎓 🇨🇳南开大学 计算机科学与技术(B.Eng.)｜🇲🇴澳门大学 MSC in AI<br>💻 算法工程师｜计算机视觉 &amp; 推荐算法 ｜ 北京崭珀科技 ｜ 作业帮<br>🔧 Python&#x2F;C++｜PyTorch｜模型训练加速｜边缘部署｜SQL&#x2F;Hive</p>
+<p>✉️ <a href="mailto:&#108;&#x75;&#104;&#x7a;&#107;&#122;&#64;&#49;&#54;&#x33;&#46;&#99;&#x6f;&#x6d;">luhzkz@163.com</a><br>✉️ <a href="mailto:&#109;&#x63;&#x36;&#x35;&#51;&#x33;&#x37;&#x40;&#117;&#x6d;&#46;&#x65;&#100;&#x75;&#x2e;&#x6d;&#111;">mc65337@um.edu.mo</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Action Quality Assessment 动作质量评价调研</title>
     <url>/2026/08/22/20260814/</url>
-    <content><![CDATA[<h1 id="Action-Quality-Assessment-动作质量评价调研"><a href="#Action-Quality-Assessment-动作质量评价调研" class="headerlink" title="Action Quality Assessment 动作质量评价调研"></a>Action Quality Assessment 动作质量评价调研</h1><p>鲁含章</p>
+    <content><![CDATA[<h1 id="Action-Quality-Assessment-动作质量评价调研"><a href="#Action-Quality-Assessment-动作质量评价调研" class="headerlink" title="Action Quality Assessment 动作质量评价调研"></a>Action Quality Assessment 动作质量评价调研</h1><p>Hanzhang</p>
 <h2 id="1-Dataset"><a href="#1-Dataset" class="headerlink" title="1. Dataset"></a>1. Dataset</h2><h3 id="1-1-竞技体操数据集"><a href="#1-1-竞技体操数据集" class="headerlink" title="1.1. 竞技体操数据集"></a>1.1. 竞技体操数据集</h3><p><strong>FineGym</strong>: 竞技体操数据集,仅动作分类<br>url: <a href="https://sdolivia.github.io/FineGym/">https://sdolivia.github.io/FineGym/</a><br><img src="/2026/08/22/20260814/image.png" alt="imageinsert"><br>e.g.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;youtube_VIDEO_ID&#125;_E_&#123;大项目开始时间戳&#125;_&#123;大项目结束时间戳&#125;_A_&#123;子动作开始时间戳&#125;_&#123;子动作开始时间戳&#125; &#123;动作分类(99类和288类)&#125;</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0003_0005 240</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0006_0008 266</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0012_0013 271</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -594,7 +602,9 @@
         <category>AQA</category>
       </categories>
       <tags>
-        <tag>AQA, CV, VLM</tag>
+        <tag>AQA</tag>
+        <tag>CV</tag>
+        <tag>VLM Tag</tag>
       </tags>
   </entry>
 </search>
