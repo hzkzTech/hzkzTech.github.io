@@ -5,7 +5,7 @@
     <url>/2026/08/22/index/</url>
     <content><![CDATA[<h2 id="👋-About-Me"><a href="#👋-About-Me" class="headerlink" title="👋 About Me"></a>👋 About Me</h2><p>Hi，我是鲁含章（Hanzhang Lu）✨</p>
 <p>🎓 🇨🇳南开大学 计算机科学与技术(B.Eng.)｜🇲🇴澳门大学 MSC in AI<br>💻 算法工程师｜计算机视觉 &amp; 推荐算法 ｜ 北京崭珀科技 ｜ 作业帮<br>🔧 Python&#x2F;C++｜PyTorch｜模型训练加速｜边缘部署｜SQL&#x2F;Hive</p>
-<p>✉️ <a href="mailto:&#108;&#x75;&#x68;&#122;&#107;&#122;&#64;&#49;&#54;&#x33;&#46;&#x63;&#111;&#109;">luhzkz@163.com</a><br>✉️ <a href="mailto:&#109;&#99;&#x36;&#x35;&#51;&#51;&#x37;&#x40;&#x75;&#x6d;&#x2e;&#x65;&#x64;&#x75;&#x2e;&#x6d;&#111;">mc65337@um.edu.mo</a></p>
+<p>✉️ <a href="mailto:&#108;&#x75;&#x68;&#x7a;&#107;&#x7a;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#x6f;&#x6d;">luhzkz@163.com</a><br>✉️ <a href="mailto:&#x6d;&#99;&#54;&#53;&#x33;&#x33;&#55;&#x40;&#x75;&#109;&#46;&#101;&#x64;&#117;&#x2e;&#109;&#x6f;">mc65337@um.edu.mo</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -605,6 +605,273 @@
         <tag>AQA</tag>
         <tag>CV</tag>
         <tag>VLM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Uncertainty 不确定性学习笔记</title>
+    <url>/2026/06/26/20260626/</url>
+    <content><![CDATA[<h1 id="20260626-不确定性学习笔记"><a href="#20260626-不确定性学习笔记" class="headerlink" title="20260626 不确定性学习笔记"></a>20260626 不确定性学习笔记</h1><p>by 鲁含章</p>
+<h2 id="1-不确定性学习在视觉识别中的应用"><a href="#1-不确定性学习在视觉识别中的应用" class="headerlink" title="1. 不确定性学习在视觉识别中的应用"></a>1. 不确定性学习在视觉识别中的应用</h2><p>url：<a href="https://www.techbeat.net/talk-info?id=359">https://www.techbeat.net/talk-info?id=359</a></p>
+<h3 id="1-1-为什么不确定性学习重要"><a href="#1-1-为什么不确定性学习重要" class="headerlink" title="1.1 为什么不确定性学习重要"></a>1.1 为什么不确定性学习重要</h3><ol>
+<li>高风险落地场景：医学图像、人脸识别、自动驾驶需要判断预测可信度；</li>
+<li>机器学习场景<br>Active Learing：选择样本<br>Reinforecement Learning：对模型参数不确定性的估计</li>
+<li>分布外检测：区分“样本模糊导致不准”和“模型没见过这类物体”两类错误；</li>
+<li>用于降噪、动态筛选样本、域自适应、伪标签清洗（和你之前读的UDA分割论文思路互通）。</li>
+</ol>
+<h3 id="1-2-不确定性两大分类"><a href="#1-2-不确定性两大分类" class="headerlink" title="1.2 不确定性两大分类"></a>1.2 不确定性两大分类</h3><ol>
+<li>模型不确定性（Epistemic&#x2F;认知不确定性）</li>
+</ol>
+<ul>
+<li>源于模型权重参数未知、训练数据不足；模型对陌生分布样本预测摇摆，可通过贝叶斯网络、MC-Dropout、模型融合估计。</li>
+</ul>
+<ol start="2">
+<li>数据不确定性（Aleatoric&#x2F;偶然不确定性）</li>
+</ol>
+<ul>
+<li>数据本身自带噪声：模糊、遮挡、暗光、低质量、标注错误；是图像固有噪声，无法通过增加训练数据消除。</li>
+</ul>
+<h3 id="1-3-深度学习主流不确定性估计方法"><a href="#1-3-深度学习主流不确定性估计方法" class="headerlink" title="1.3 深度学习主流不确定性估计方法"></a>1.3 深度学习主流不确定性估计方法</h3><ol>
+<li>Bayesian Neural Networks贝叶斯神经网络，给权重分布而非固定值</li>
+<li>变分推断VI：用一个替代分布近似p（theta｜X）。加速BNN计算。TODO：没细讲，看论文</li>
+<li>MC Dropout &#x3D;&#x3D; BNN + VI：训练+推理Dropout，多次前向取均值&#x2F;方差，低成本近似贝叶斯；</li>
+<li>模型融合：多模型预测方差，精度高但算力开销大；MC Dropout是特殊的模型融合</li>
+<li>回归任务预测数据uncertainty<ul>
+<li>y - 高斯分布</li>
+<li>sigma 随数据学习难度变化</li>
+<li>or GT y - Dirac delta 分布&#x3D;&#x3D;&gt;最小化KL散度<br> <img src="/2026/06/26/20260626/loss.jpg" alt="alttext"></li>
+</ul>
+</li>
+</ol>
+<h3 id="1-4-视觉相关工作"><a href="#1-4-视觉相关工作" class="headerlink" title="1.4 视觉相关工作"></a>1.4 视觉相关工作</h3><ol>
+<li>What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?</li>
+</ol>
+<p>见3.</p>
+<ol start="2">
+<li>人脸识别<br>1）Face recognition with Bayesian convolutional networks for robust surveillance systems. EURASIP Journal on Image and Video Processing, 2019: Adopt BNN with dropout</li>
+</ol>
+<h4 id="1-4-1-PFE（Probabilistic-Face-Embeddings）"><a href="#1-4-1-PFE（Probabilistic-Face-Embeddings）" class="headerlink" title="1.4.1 PFE（Probabilistic Face Embeddings）"></a>1.4.1 PFE（Probabilistic Face Embeddings）</h4><h5 id="1-特征表示"><a href="#1-特征表示" class="headerlink" title="1. 特征表示"></a>1. 特征表示</h5><p>单张人脸建模对角高斯分布：<br>$$<br>p(z|x) &#x3D; \mathcal{N}(z; \boldsymbol{\mu}, \mathrm{diag}(\sigma_1^2,\sigma_2^2,…,\sigma_D^2))<br>$$</p>
+<ul>
+<li>$\boldsymbol{\mu}$：均值向量，传统人脸特征；</li>
+<li>$\sigma^2$：逐维不确定性，softplus激活保证恒大于0。</li>
+</ul>
+<h5 id="2-网络结构"><a href="#2-网络结构" class="headerlink" title="2. 网络结构"></a>2. 网络结构</h5><ol>
+<li>主干（ArcFace&#x2F;ResNet）输出512维均值 $\boldsymbol{\mu}$；</li>
+<li>轻量FC不确定性分支输出512维方差 $\sigma^2$。</li>
+</ol>
+<h5 id="3-匹配度量：MLS-互似然得分"><a href="#3-匹配度量：MLS-互似然得分" class="headerlink" title="3. 匹配度量：MLS 互似然得分"></a>3. 匹配度量：MLS 互似然得分</h5><p>替代余弦距离，同时利用均值+方差做比对：<br>$$<br>\text{MLS}(x_i,x_j) &#x3D; -\frac{1}{2}\sum_{l&#x3D;1}^D \left[<br>\frac{(\mu_i^l - \mu_j^l)^2}{\sigma_i^{l2}+\sigma_j^{l2}}<br>+\log(\sigma_i^{l2}+\sigma_j^{l2})<br>\right]<br>$$</p>
+<ul>
+<li>第一项：归一化距离，方差大则放宽匹配约束；</li>
+<li>第二项：不确定性惩罚，防止模型无限放大方差。</li>
+</ul>
+<h5 id="4-高斯共轭融合（同身份多帧合并）"><a href="#4-高斯共轭融合（同身份多帧合并）" class="headerlink" title="4. 高斯共轭融合（同身份多帧合并）"></a>4. 高斯共轭融合（同身份多帧合并）</h5><p>精度定义 $\lambda_k &#x3D; \dfrac{1}{\sigma_k^2}$，多张人脸融合：<br>$$<br>\begin{aligned}<br>\Lambda_{fuse} &amp;&#x3D; \sum_{k&#x3D;1}^N \lambda_k \<br>\mu_{fuse} &amp;&#x3D; \frac{\sum_{k&#x3D;1}^N \lambda_k \mu_k}{\Lambda_{fuse}} \<br>\sigma_{fuse}^2 &amp;&#x3D; \frac{1}{\Lambda_{fuse}}<br>\end{aligned}<br>$$<br>清晰人脸自动获得更高权重，融合后整体不确定性降低。</p>
+<h5 id="5-局限性"><a href="#5-局限性" class="headerlink" title="5. 局限性"></a>5. 局限性</h5><ol>
+<li>没有去学习真实features mean，只学习了variance</li>
+<li>推理阶段必须使用MLS度量，无法兼容传统余弦距离</li>
+</ol>
+<h4 id="1-4-2-DUL（Data-Uncertainty-Learning-in-Face-Recognition）"><a href="#1-4-2-DUL（Data-Uncertainty-Learning-in-Face-Recognition）" class="headerlink" title="1.4.2 DUL（Data Uncertainty Learning in Face Recognition）"></a>1.4.2 DUL（Data Uncertainty Learning in Face Recognition）</h4><h5 id="1-4-2-1-核心动机"><a href="#1-4-2-1-核心动机" class="headerlink" title="1.4.2.1 核心动机"></a>1.4.2.1 核心动机</h5><ul>
+<li>在PFE基础上，同时更新mean和variance，不再需要MLS算相似度，可以直接使用cos相似度<br>训练集存在模糊、遮挡、标注错误样本；通过不确定性加权，抑制噪声样本对主干特征的干扰。</li>
+</ul>
+<h5 id="1-4-2-2-DUL-cls：基于分类的不确定性学习"><a href="#1-4-2-2-DUL-cls：基于分类的不确定性学习" class="headerlink" title="1.4.2.2 DUL-cls：基于分类的不确定性学习"></a>1.4.2.2 DUL-cls：基于分类的不确定性学习</h5><ol>
+<li><p>新分支估计$\sigma_i$</p>
+</li>
+<li><p>重参技巧-样本feature：$s_i&#x3D;\mu_i+\epsilon\sigma_i, \epsilon\sim N(0,1)$</p>
+</li>
+<li><p>分类损失 $\mathcal{L}<em>{softmax}$: 标准Softmax交叉熵损失<br>$$<br>\mathcal{L}</em>{softmax }&#x3D;\frac{1}{N} \sum_{i}^{N}-\log \frac{e^{w_{y_{i}}^{\top} s_{i}}}{\sum_{c}^{C} e^{w_{c}^{\top} s_{i}}}<br>$$</p>
+</li>
+</ol>
+<ul>
+<li>$N$：批次样本数</li>
+<li>$C$：训练集身份类别数</li>
+<li>$w_c \in \mathbb{R}^D$：第 $c$ 类的分类器权重向量</li>
+<li>$y_i$：第 $i$ 个样本的真实身份标签</li>
+</ul>
+<ol start="4">
+<li><p>KL散度正则项 $\mathcal{L}<em>{kl}$<br>为防止模型把所有样本的 $\sigma$ 都压到极小（退化为确定性模型）或拉到极大（放弃学习），引入高斯分布与标准正态分布的KL散度作为正则约束：<br>$$<br>\begin{aligned}<br>\mathcal{L}</em>{k l} &amp;&#x3D;K L\left[\mathcal{N}\left(z_{i} \mid \mu_{i}, \sigma_{i}^{2}\right) | \mathcal{N}(\epsilon \mid 0, I)\right] \<br>&amp;&#x3D;-\frac{1}{2}\left(1+\log \sigma^{2}-\mu^{2}-\sigma^{2}\right)<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>DUL_cls 总损失<br>$$<br>\mathcal{L}<em>{cls} &#x3D; \mathcal{L}</em>{softmax} + \lambda \cdot \mathcal{L}_{kl}<br>$$</p>
+</li>
+</ol>
+<h5 id="1-4-2-3-DUL-rgs-基于回归的不确定性学习"><a href="#1-4-2-3-DUL-rgs-基于回归的不确定性学习" class="headerlink" title="1.4.2.3 DUL-rgs: 基于回归的不确定性学习"></a>1.4.2.3 DUL-rgs: 基于回归的不确定性学习</h5><p><strong>基于预训练好的人脸识别模型，通过回归范式联合学习特征均值 $\boldsymbol{\mu}$ 与数据不确定性 $\sigma$</strong></p>
+<ol>
+<li>核心设计目标：</li>
+</ol>
+<ul>
+<li>弥补PFE「固定均值、仅训练方差」的局限，让均值特征随不确定性同步优化</li>
+<li>可直接基于现有SOTA模型升级</li>
+<li><strong>将任务从「图像→离散身份」转化为「图像→连续类别中心向量」的回归任务，从而适配异方差高斯回归框架</strong></li>
+<li>取分类层的权重向量 $\boldsymbol{w}_c$ 作为第 $c$ 类的类别中心</li>
+</ul>
+<ol start="2">
+<li><p>Loss<br>$$<br>L_{rgs} &#x3D; -\frac{1}{N}\sum_{i&#x3D;1}^{N} \left( \frac{(w_c - \mu_{i\in c})^2}{2\sigma_i^2} + \frac{1}{2}\ln\sigma_i^2 + \frac{1}{2}\ln 2\pi \right)<br>$$</p>
+</li>
+<li><p>标准两阶段训练流程</p>
+</li>
+</ol>
+<p>阶段1：预训练基线模型<br>用标准分类损失（如ArcFace）训练完整的确定性人脸识别模型，得到可靠的主干特征提取能力与分类权重 $\boldsymbol{w}_c$。</p>
+<p>阶段2：回归式不确定性训练</p>
+<ul>
+<li>固定主干卷积层全部参数，保留原有特征提取能力不被破坏</li>
+<li>新增轻量不确定性分支（全连接头），输出逐维对数方差 $r_i$</li>
+<li>以预训练的分类权重 $\boldsymbol{w}<em>c$ 为回归目标，用 $\mathcal{L}</em>{rgs}$ 同时优化均值头与方差头</li>
+<li>最终效果：清晰样本被进一步拉近类别中心，噪声样本被自动降权，整体特征类内更紧、类间更分开</li>
+</ul>
+<h3 id="1-6-TODO：衍生论文"><a href="#1-6-TODO：衍生论文" class="headerlink" title="1.6 TODO：衍生论文"></a>1.6 TODO：衍生论文</h3><ol>
+<li>对BNN介绍：A history of Bayesian neural network，Zoubin Ghahramani，NIPS 2016 keynote</li>
+<li>MC Dropout近似BNN+VI：Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning</li>
+</ol>
+<h2 id="2-Rectifying-Pseudo-Label-Learning-via-Uncertainty-Estimation-for-Domain-Adaptive-Semantic-Segmentation"><a href="#2-Rectifying-Pseudo-Label-Learning-via-Uncertainty-Estimation-for-Domain-Adaptive-Semantic-Segmentation" class="headerlink" title="2. Rectifying Pseudo Label Learning via Uncertainty Estimation for Domain Adaptive Semantic Segmentation"></a>2. Rectifying Pseudo Label Learning via Uncertainty Estimation for Domain Adaptive Semantic Segmentation</h2><p>paper：<a href="https://arxiv.org/pdf/2003.03773">https://arxiv.org/pdf/2003.03773</a><br>zhihu：<a href="https://zhuanlan.zhihu.com/p/130220572">https://zhuanlan.zhihu.com/p/130220572</a></p>
+<h3 id="2-1-研究问题"><a href="#2-1-研究问题" class="headerlink" title="2.1 研究问题"></a>2.1 研究问题</h3><ul>
+<li>语义分割模型中，传统伪标签pseduo lable方法常手动设定阈值筛选高置信标签，但domain shift会导致阈值难定</li>
+<li>伪标签总会引入噪声，这会影响模型训练——需要利用不确定性判断伪标签的可信度，训练时减少不确定样本的惩罚</li>
+</ul>
+<h3 id="2-2-核心方法"><a href="#2-2-核心方法" class="headerlink" title="2.2 核心方法"></a>2.2 核心方法</h3><ul>
+<li>符合前文1.3.4中的用模型融合方法消除模型不确定性</li>
+<li>利用了分割模型中的辅助分类器<ul>
+<li>主分类器（Primary）：深层 res5c 输出；</li>
+<li>辅助分类器（Auxiliary）：浅层 res4b22 输出；</li>
+<li>网络内置 Dropout，进一步扩大深浅分类器预测差异。</li>
+</ul>
+</li>
+<li>伪标签错误的地方，往往是 两个分类器预测不同结果的地方（Prediction Variance）</li>
+<li><strong>伪代码：</strong><br><img src="/2026/06/26/20260626/PseudoLabel.jpg" alt="alttext"></li>
+</ul>
+<p> </p>
+<h3 id="2-3-核心结果"><a href="#2-3-核心结果" class="headerlink" title="2.3 核心结果"></a>2.3 核心结果</h3><h4 id="2-3-1-数据集"><a href="#2-3-1-数据集" class="headerlink" title="2.3.1 数据集"></a>2.3.1 数据集</h4><p>合成→真实：GTA5→Cityscapes；<br>合成→真实：SYNTHIA→Cityscapes；<br>跨城市真实域：Cityscapes→Oxford RobotCar；</p>
+<h4 id="2-3-2-消融实验"><a href="#2-3-2-消融实验" class="headerlink" title="2.3.2 消融实验"></a>2.3.2 消融实验</h4><ul>
+<li>不同伪标签生成器兼容：无论是弱基线 AdaptSegNet 还是强基线 MRNet 生成的噪声伪标签，本文方法均可稳定涨点；</li>
+<li>Dropout 影响：dropout&#x3D;0.1 效果最优，无 dropout 仍显著优于传统伪标签；</li>
+<li>距离函数对比：KL 散度优于 MSE、反向 KL；</li>
+<li>对比 MC-Dropout：本文不确定性区分度（uncertainty gap）与高 dropout MC-Dropout 持平，且无需多次前向推理，推理速度更快；</li>
+</ul>
+<h2 id="3-What-Uncertainties-Do-We-Need-in-Bayesian-Deep-Learning-for-Computer-Vision"><a href="#3-What-Uncertainties-Do-We-Need-in-Bayesian-Deep-Learning-for-Computer-Vision" class="headerlink" title="3. What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?"></a>3. What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?</h2><p>paper：<a href="https://arxiv.org/pdf/1703.04977">https://arxiv.org/pdf/1703.04977</a><br>zhihu：<a href="https://zhuanlan.zhihu.com/p/430849602">https://zhuanlan.zhihu.com/p/430849602</a></p>
+<h3 id="3-1-两类不确定性的定义"><a href="#3-1-两类不确定性的定义" class="headerlink" title="3.1 两类不确定性的定义"></a>3.1 两类不确定性的定义</h3><p>1.2中也有说明</p>
+<ol>
+<li>Epistemic Uncertainty</li>
+</ol>
+<ul>
+<li>同一批数据可能训练出多组参数，对应模型对数据的不同解释。可以反应域外数据的不确定性</li>
+</ul>
+<ol>
+<li>Aleatoric Uncertainty</li>
+</ol>
+<ul>
+<li>是观测数据本身固有的噪声，无法通过增加训练数据消除。</li>
+<li>分类：<ul>
+<li>同方差（Homoscedastic）：所有输入样本的噪声水平一致，比如测量仪器误差，实用价值较低；</li>
+<li>异方差（Heteroscedastic）：噪声水平随输入变化，同一批样本内也有不同水平的噪声，是视觉任务的研究重点。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-建模方法"><a href="#3-2-建模方法" class="headerlink" title="3.2 建模方法"></a>3.2 建模方法</h3><h4 id="3-2-1-认知不确定性（Epistemic-Uncertainty）"><a href="#3-2-1-认知不确定性（Epistemic-Uncertainty）" class="headerlink" title="3.2.1 认知不确定性（Epistemic Uncertainty）"></a>3.2.1 认知不确定性（Epistemic Uncertainty）</h4><h5 id="1-Monte-Carlo-Dropout"><a href="#1-Monte-Carlo-Dropout" class="headerlink" title="1. Monte Carlo Dropout"></a>1. Monte Carlo Dropout</h5><ul>
+<li>训练阶段：在训练阶段使用 Dropout，随机丢弃部分神经元，模拟不同的模型参数组合；</li>
+<li>推理阶段：在推理阶段，保持 Dropout 激活状态，进行多次前向传播，每次传播都会随机丢弃不同的神经元，从而得到不同的预测结果；</li>
+<li>分类任务：对 T 次 softmax 输出取平均得到最终预测概率，用概率向量的熵衡量不确定性大小；</li>
+<li>回归任务：对 T 次预测结果计算方差，方差越大代表认知不确定性越高。<br>$$<br>\mathcal{L}(\theta, p)&#x3D;-\frac{1}{N} \sum_{i&#x3D;1}^{N} \log p\left(y_{i} \mid f^{\widehat{W}<em>{i}}\left(x</em>{i}\right)\right)+\frac{1-p}{2 N}|\theta|^{2}<br>$$</li>
+</ul>
+<h4 id="3-2-2-偶然不确定性（Aleatoric-Uncertainty）"><a href="#3-2-2-偶然不确定性（Aleatoric-Uncertainty）" class="headerlink" title="3.2.2 偶然不确定性（Aleatoric Uncertainty）"></a>3.2.2 偶然不确定性（Aleatoric Uncertainty）</h4><ul>
+<li>让网络同时预测任务主结果和对应输入的噪声方差，通过负对数似然推导损失函数：</li>
+</ul>
+<p>$$<br>\mathcal{L}<em>{\mathrm{NN}}(\theta) &#x3D; \frac{1}{N}\sum</em>{i&#x3D;1}^{N}\frac{1}{2\sigma(x_i)^2}\left|y_i - f(x_i)\right|^2 + \frac{1}{2}\log\sigma(x_i)^2<br>$$</p>
+<h4 id="3-2-3-融合两种不确定性"><a href="#3-2-3-融合两种不确定性" class="headerlink" title="3.2.3 融合两种不确定性"></a>3.2.3 融合两种不确定性</h4><ul>
+<li>如果直接让网络预测 $\sigma^2$，网络容易输出 $\sigma^2&#x3D;0$分母为 0，训练直接 NaN 崩溃。故网络不直接预测方差，而是预测对数方差，令$s_i :&#x3D; \log \hat{\sigma}_i^2$，损失改写为：</li>
+</ul>
+<p>$$<br>\mathcal{L}_{BNN}(\theta) &#x3D; \frac{1}{D}\sum \frac{1}{2}\exp(-s_i)\left| y_i - \hat{y}_i \right|^2 + \frac{1}{2}s_i<br>$$</p>
+<ul>
+<li>使用MC dropout的策略</li>
+</ul>
+<p>$$<br>Var(y) \approx \underbrace{\frac{1}{T}\sum_{t&#x3D;1}^{T}\hat{y}<em>{t}^{2}-\left( \frac{1}{T}\sum</em>{t&#x3D;1}^{T}\hat{y}<em>{t} \right)^{2}}</em>{\text{Epistemic Uncertainty}} + \underbrace{\frac{1}{T}\sum_{t&#x3D;1}^{T}\hat{\sigma}<em>{t}^{2}}</em>{\text{Aleatoric Uncertainty}}<br>$$</p>
+<h2 id="4-总结疑问"><a href="#4-总结疑问" class="headerlink" title="4. 总结疑问"></a>4. 总结疑问</h2><p>知乎解读里说ijcv paper利用主分类器 + 辅助分类器的输出分歧同时建模两类不确定性，我起初存在理解偏差：误认为训练阶段两头预测差异反映认知不确定性，推理阶段差异才反映数据模糊、伪标签自带噪声（偶然不确定性）。由此产生疑问：在训练流程中，如何区分输出分歧的来源，分辨该波动是模型参数学习不充分的认知不确定性，还是样本本身遮挡、远景、标注误差带来的偶然不确定性？</p>
+<p>看了代码，确实是在源域上充分训练了的模型，才在目标域上生成伪标签，二阶段训练的Rectifying Loss主要建模的是偶然不确定性</p>
+<h3 id="Stage-I-train-ms-py"><a href="#Stage-I-train-ms-py" class="headerlink" title="Stage-I (train_ms.py)"></a><strong>Stage-I (train_ms.py)</strong></h3><ul>
+<li>输入<ul>
+<li>源域图像 + 标签（GTA5）</li>
+<li>目标域图像（Cityscapes）</li>
+</ul>
+</li>
+<li>模型<ul>
+<li>双分支DeepLab（ResNetMulti）<ul>
+<li>Layer5：浅层特征分支</li>
+<li>Layer6：深层特征分支</li>
+</ul>
+</li>
+<li>双判别器（MsImageDis）<ul>
+<li>D1：判别器1</li>
+<li>D2：判别器2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>损失函数<ul>
+<li>源域分割损失（Hard Label Learning）<ul>
+<li>只保留损失值前80%的难样本</li>
+<li>公式：$L_{seg} &#x3D; L_{CE}(pred_2, y_s) + \lambda_{seg} \cdot L_{CE}(pred_1, y_s)$</li>
+<li>参数：$\lambda_{seg}&#x3D;0.5$</li>
+</ul>
+</li>
+<li>目标域对抗损失（DA）<ul>
+<li>公式：$L_{adv} &#x3D; \lambda_{adv1} \cdot L_{GAN}(D_1, pred_1^t) + \lambda_{adv2} \cdot L_{GAN}(D_2, pred_2^t)$</li>
+<li>参数：$\lambda_{adv1}&#x3D;0.0002, \lambda_{adv2}&#x3D;0.001$</li>
+</ul>
+</li>
+<li>Memory Regularization（KL散度）<ul>
+<li>公式：$L_{mem} &#x3D; \frac{1}{NHW} \sum D_{KL}(p_b | \bar{p})$</li>
+<li>参数：$\lambda_{kl}&#x3D;0.1$（15000步后启用）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出：预训练模型（GTA5_25000.pth）</li>
+</ul>
+<h3 id="生成伪标签"><a href="#生成伪标签" class="headerlink" title="生成伪标签"></a><strong>生成伪标签</strong></h3><ul>
+<li>输入<ul>
+<li>目标域图像</li>
+<li>Stage-I训练好的模型</li>
+</ul>
+</li>
+<li>处理<ul>
+<li>mean_pred &#x3D; Softmax(0.5 × pred1 + pred2)</li>
+<li>pseudo_label &#x3D; argmax(mean_pred)</li>
+</ul>
+</li>
+<li>输出：目标域伪标签</li>
+</ul>
+<h3 id="Stage-II-train-ft-py-trainer-ms-variance-py"><a href="#Stage-II-train-ft-py-trainer-ms-variance-py" class="headerlink" title="Stage-II (train_ft.py + trainer_ms_variance.py)"></a><strong>Stage-II (train_ft.py + trainer_ms_variance.py)</strong></h3><ul>
+<li>输入<ul>
+<li>目标域图像</li>
+<li>伪标签</li>
+</ul>
+</li>
+<li>模型<ul>
+<li>双分支DeepLab（无判别器）</li>
+</ul>
+</li>
+<li>损失函数<ul>
+<li>Rectifying Loss（不确定性感知）<ul>
+<li>不确定性估计：$U &#x3D; D_{KL}(p_1 | p_2)$</li>
+<li>公式：$L_{rect} &#x3D; \frac{1}{|\Omega|} \sum L_{CE}(p, \hat{y}) \cdot exp(-U) + \frac{1}{|\Omega|} \sum U$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出：最终模型</li>
+</ul>
+<h3 id="关键参数"><a href="#关键参数" class="headerlink" title="关键参数"></a><strong>关键参数</strong></h3><ul>
+<li>only_hard_label &#x3D; 80（保留难样本比例）</li>
+<li>lambda_seg &#x3D; 0.5（第一分支权重）</li>
+<li>lambda_kl_target &#x3D; 0.1（Memory Regularization权重）</li>
+<li>max_value &#x3D; 7（小目标权重）</li>
+<li>class_balance &#x3D; True（类别平衡）</li>
+<li>often_balance &#x3D; True（频繁度平衡）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Uncertainty</category>
+      </categories>
+      <tags>
+        <tag>CV</tag>
+        <tag>VLM</tag>
+        <tag>Uncertainty</tag>
+        <tag>Face recognition</tag>
       </tags>
   </entry>
 </search>
