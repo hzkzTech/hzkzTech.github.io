@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/site.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/site.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="数据集 年份 样本数 平均时长 原表标注 领域 链接 数据集简介    MIT-Dive 2014 159 ~2.5s Score Sport 项目页 短时跳水视频及裁判质量分，是早期视频 AQA 的经典回归基准。   MIT-Skate 2014 150 ~175s Score Sport 项目页 长时花样滑冰节目与总体得分，适合研究长时序评分。   JIGSAWS 2014 103 ~9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Action Quality Assessment 数据集">
+<meta property="og:url" content="http://example.com/2026/08/22/20260824/index.html">
+<meta property="og:site_name" content="含章可贞">
+<meta property="og:description" content="数据集 年份 样本数 平均时长 原表标注 领域 链接 数据集简介    MIT-Dive 2014 159 ~2.5s Score Sport 项目页 短时跳水视频及裁判质量分，是早期视频 AQA 的经典回归基准。   MIT-Skate 2014 150 ~175s Score Sport 项目页 长时花样滑冰节目与总体得分，适合研究长时序评分。   JIGSAWS 2014 103 ~9">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-08-22T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-24T08:08:32.130Z">
+<meta property="article:author" content="Hanzhang Lu">
+<meta property="article:tag" content="AQA">
+<meta property="article:tag" content="Dataset">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2026/08/22/20260824/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Action Quality Assessment 数据集 | 含章可贞</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">含章可贞</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/08/22/20260824/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hanzhang Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="含章可贞">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Action Quality Assessment 数据集
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2026-08-22 12:00:00" itemprop="dateCreated datePublished" datetime="2026-08-22T12:00:00+08:00">2026-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-08-24 16:08:32" itemprop="dateModified" datetime="2026-08-24T16:08:32+08:00">2026-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AQA/" itemprop="url" rel="index"><span itemprop="name">AQA</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <table>
+<thead>
+<tr>
+<th>数据集</th>
+<th align="right">年份</th>
+<th align="right">样本数</th>
+<th>平均时长</th>
+<th>原表标注</th>
+<th>领域</th>
+<th>链接</th>
+<th>数据集简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MIT-Dive</td>
+<td align="right">2014</td>
+<td align="right">159</td>
+<td>~2.5s</td>
+<td>Score</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td>短时跳水视频及裁判质量分，是早期视频 AQA 的经典回归基准。</td>
+</tr>
+<tr>
+<td>MIT-Skate</td>
+<td align="right">2014</td>
+<td align="right">150</td>
+<td>~175s</td>
+<td>Score</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td>长时花样滑冰节目与总体得分，适合研究长时序评分。</td>
+</tr>
+<tr>
+<td>JIGSAWS</td>
+<td align="right">2014</td>
+<td align="right">103</td>
+<td>~92s</td>
+<td>Score, Action</td>
+<td>Surgery</td>
+<td><a target="_blank" rel="noopener" href="https://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/">项目页</a></td>
+<td>达芬奇机器人手术的缝合、打结、穿针任务；含手势片段和全局技能评分，并提供视频与运动学数据。</td>
+</tr>
+<tr>
+<td>UNLV-Dive</td>
+<td align="right">2017</td>
+<td align="right">370</td>
+<td>~3.8s</td>
+<td>Score</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td>跳水动作视频与评分；可用于和 MIT-Dive、MTL-AQA 做跨数据集验证。</td>
+</tr>
+<tr>
+<td>UNLV-Vault</td>
+<td align="right">2017</td>
+<td align="right">176</td>
+<td>~2.8s</td>
+<td>Score</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td>竞技体操跳马短片及质量分，是与体操主任务最直接相关的早期公开 AQA 集。</td>
+</tr>
+<tr>
+<td>UI-PRMD</td>
+<td align="right">2018</td>
+<td align="right">100</td>
+<td>—</td>
+<td>Grade, Action</td>
+<td>Rehab</td>
+<td>—</td>
+<td>物理康复动作的类别与动作完成等级，适合迁移到姿态质量与错误检测。</td>
+</tr>
+<tr>
+<td>EPIC-Skill</td>
+<td align="right">2018</td>
+<td align="right">216</td>
+<td>~86.6s</td>
+<td>Rank, Action</td>
+<td>Daily</td>
+<td><a target="_blank" rel="noopener" href="https://epic-kitchens.github.io/BEST">项目页</a></td>
+<td>日常程序性任务的技能排序与动作标签；重点是相对质量而非体育裁判分。</td>
+</tr>
+<tr>
+<td>AQA-7</td>
+<td align="right">2019</td>
+<td align="right">1,189</td>
+<td>~6.7s</td>
+<td>Score, Action</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://rtis.oit.unlv.edu/datasets.html">项目页</a></td>
+<td>覆盖多个竞技运动项目的质量分与动作类别，是多项目 AQA 的传统泛化基准。</td>
+</tr>
+<tr>
+<td>MTL-AQA</td>
+<td align="right">2019</td>
+<td align="right">1,412</td>
+<td>~4.1s</td>
+<td>Score, Action, Desc.</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ParitoshParmar/MTL-AQA">项目页</a></td>
+<td>跳水 AQA 数据集；除得分和动作类型外还含描述性监督，适合多任务质量评估。</td>
+</tr>
+<tr>
+<td>Fis-V</td>
+<td align="right">2019</td>
+<td align="right">500</td>
+<td>~170s</td>
+<td>Score</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/chmxu/MS_LSTM">项目页</a></td>
+<td>花样滑冰长视频与质量评分，用于长时序运动表现建模。</td>
+</tr>
+<tr>
+<td>BEST</td>
+<td align="right">2019</td>
+<td align="right">500</td>
+<td>~187.6s</td>
+<td>Grade, Rank, Action</td>
+<td>Daily</td>
+<td><a target="_blank" rel="noopener" href="https://epic-kitchens.github.io/BEST">项目页</a></td>
+<td>日常任务视频，提供等级、相对排序和动作标签，适合排序式 AQA。</td>
+</tr>
+<tr>
+<td>KIMORE</td>
+<td align="right">2019</td>
+<td align="right">353</td>
+<td>~29.9s</td>
+<td>Score, Action</td>
+<td>Rehab</td>
+<td>—</td>
+<td>康复训练动作及临床质量分，常用于骨架&#x2F;RGB-D 的执行质量评估。</td>
+</tr>
+<tr>
+<td>TASD-2</td>
+<td align="right">2020</td>
+<td align="right">606</td>
+<td>~4.1s</td>
+<td>Score, Action</td>
+<td>Sport</td>
+<td>—</td>
+<td>双人同步跳水视频与得分&#x2F;动作类别；可研究双人同步性和个体质量的联合建模。</td>
+</tr>
+<tr>
+<td>Rhythmic Gym.</td>
+<td align="right">2020</td>
+<td align="right">1,000</td>
+<td>~95s</td>
+<td>Score, Action</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/qinghuannn/ACTION-NET">项目页</a></td>
+<td>艺术体操成套动作（球、棒、圈、带等）的评分与动作标签；对体操长节目和难度&#x2F;执行建模很有参考价值。</td>
+</tr>
+<tr>
+<td>PISA (Piano-Skills)</td>
+<td align="right">2021</td>
+<td align="right">992</td>
+<td>~160fr</td>
+<td>Grade, Difficulty</td>
+<td>Music</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ParitoshParmar/Piano-Skills-Assessment">项目页</a></td>
+<td>钢琴演奏片段的技能等级与曲目难度，适合研究“难度—执行质量”解耦。</td>
+</tr>
+<tr>
+<td>FR-FS</td>
+<td align="right">2021</td>
+<td align="right">417</td>
+<td>~103fr</td>
+<td>Grade, Action</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Shunli-Wang/TSA-Net">项目页</a></td>
+<td>花样滑冰动作片段的等级和动作类别，用于细粒度时空质量表征。</td>
+</tr>
+<tr>
+<td>FS1000</td>
+<td align="right">2021</td>
+<td align="right">1,000</td>
+<td>—</td>
+<td>Score, Action</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/AndyFrancesco29/Audio-Visual-Figure-Skating">项目页</a></td>
+<td>花样滑冰评分与动作标签数据，可用于音视频联合的表现质量分析。</td>
+</tr>
+<tr>
+<td>SMART</td>
+<td align="right">2021</td>
+<td align="right">5,000</td>
+<td>~420fr</td>
+<td>Score, Action</td>
+<td>Sport</td>
+<td>—</td>
+<td>较大规模体育动作质量数据，带得分与动作监督，适合作为跨动作训练资源。</td>
+</tr>
+<tr>
+<td>SimSurgSkill</td>
+<td align="right">2021</td>
+<td align="right">315</td>
+<td>—</td>
+<td>Score, Action</td>
+<td>Surgery</td>
+<td>—</td>
+<td>手术模拟训练中的任务质量&#x2F;技能评分与动作标签，面向自动化手术技能评估。</td>
+</tr>
+<tr>
+<td>Fitness-AQA</td>
+<td align="right">2022</td>
+<td align="right">21,284</td>
+<td>~4.1s</td>
+<td>Grade, Action</td>
+<td>Fitness</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ParitoshParmar/Fitness-AQA">项目页</a></td>
+<td>大规模健身动作质量等级和动作类别数据，适合预训练姿态—动作质量表示。</td>
+</tr>
+<tr>
+<td>FineDiving</td>
+<td align="right">2022</td>
+<td align="right">3,000</td>
+<td>~4.2s</td>
+<td>Score, Action, Step</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/xujinglin/FineDiving">项目页</a></td>
+<td>跳水评分数据，含动作类型、步骤类型与时间边界；细粒度过程感知 AQA 的核心基准。</td>
+</tr>
+<tr>
+<td>Assembly101</td>
+<td align="right">2022</td>
+<td align="right">4,321</td>
+<td>~426s</td>
+<td>Score, Action</td>
+<td>Industrial</td>
+<td><a target="_blank" rel="noopener" href="https://assembly-101.github.io/">项目页</a></td>
+<td>多视角装配程序视频，含操作动作和质量&#x2F;得分监督，可检验长流程技能迁移。</td>
+</tr>
+<tr>
+<td>LOGO</td>
+<td align="right">2023</td>
+<td align="right">200</td>
+<td>~204.2s</td>
+<td>Score, Action, Form.</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/shiyi-zh0408/LOGO">项目页</a></td>
+<td>花样游泳数据集，长视频群体动作质量数据，附队形信息，适合研究多人协同和编排质量。</td>
+</tr>
+<tr>
+<td>FineFS</td>
+<td align="right">2023</td>
+<td align="right">1,167</td>
+<td>~215s</td>
+<td>Score, Action</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/yanliji/FineFS-dataset">项目页</a></td>
+<td>细粒度花样滑冰数据，提供视频、估计骨架及丰富下游标注，适合长时序与姿态质量建模。</td>
+</tr>
+<tr>
+<td>PaSk</td>
+<td align="right">2023</td>
+<td align="right">1,018</td>
+<td>~10.7s</td>
+<td>Score</td>
+<td>Sport</td>
+<td>—</td>
+<td>体育动作视频与质量评分的短时基准，可作为纯分数回归泛化测试。</td>
+</tr>
+<tr>
+<td>CDRG</td>
+<td align="right">2023</td>
+<td align="right">240</td>
+<td>~14.7s</td>
+<td>Rank, Action</td>
+<td>Dance</td>
+<td>—</td>
+<td>舞蹈动作的相对质量排序和动作标签，适合研究没有绝对裁判分时的排序学习。</td>
+</tr>
+<tr>
+<td>GAIA</td>
+<td align="right">2024</td>
+<td align="right">9,180</td>
+<td>~2.8s</td>
+<td>Score, Action</td>
+<td>AIGV</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/zijianchen98/GAIA">项目页</a></td>
+<td>AI 生成的人体动作视频质量数据；用于研究 AQA 在合成伪影与不自然运动下的稳健性。</td>
+</tr>
+<tr>
+<td>EgoExo-4D</td>
+<td align="right">2024</td>
+<td align="right">5,035</td>
+<td>~312s</td>
+<td>Grade, Action</td>
+<td>Daily</td>
+<td><a target="_blank" rel="noopener" href="https://ego-exo4d-data.org/">项目页</a></td>
+<td>第一&#x2F;第三视角同步的日常技能数据，含任务等级与动作标签，适合跨视角质量评估。</td>
+</tr>
+<tr>
+<td>EgoExo-Learn</td>
+<td align="right">2024</td>
+<td align="right">3,304</td>
+<td>~10s</td>
+<td>Rank, Action</td>
+<td>Daily</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/OpenGVLab/EgoExoLearn">项目页</a></td>
+<td>第一、第三视角技能学习任务的相对排序与动作标签，适合跨视角排序式 AQA。</td>
+</tr>
+<tr>
+<td>EgoExo-Fitness</td>
+<td align="right">2024</td>
+<td align="right">6,131</td>
+<td>~18.8s</td>
+<td>Score, Action, Desc.</td>
+<td>Fitness</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iSEE-Laboratory/EgoExo-Fitness">项目页</a></td>
+<td>第一&#x2F;第三视角全身健身动作，带分数、类别与文字描述，适合多视角和视觉语言质量建模。</td>
+</tr>
+<tr>
+<td>AVOS</td>
+<td align="right">2024</td>
+<td align="right">1,997</td>
+<td>—</td>
+<td>Grade, Action</td>
+<td>Surgery</td>
+<td>—</td>
+<td>手术视频的等级与动作标注，用于临床技能质量和流程理解。</td>
+</tr>
+<tr>
+<td>UJ-AQA</td>
+<td align="right">2025</td>
+<td align="right">8,540</td>
+<td>~28fr</td>
+<td>Score</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/dvanderhaar/uj-aqa-cricketvision">项目页</a></td>
+<td>板球动作质量评分数据，样本规模较大，适合跨运动的纯视频分数回归与泛化。</td>
+</tr>
+<tr>
+<td>BASKET</td>
+<td align="right">2025</td>
+<td align="right">32,232</td>
+<td>~500s</td>
+<td>Grade, Action</td>
+<td>Sport</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/yulupan00/BASKET">项目页</a></td>
+<td>大规模篮球技能视频，提供质量等级和动作标签，适合长时序、多事件体育技能评估。</td>
+</tr>
+<tr>
+<td>FLEX</td>
+<td align="right">2025</td>
+<td align="right">7,512</td>
+<td>~234fr</td>
+<td>Score, Action, Desc., sEMG</td>
+<td>Fitness</td>
+<td><a target="_blank" rel="noopener" href="https://haoyin116.github.io/Survey_of_AQA/">综述页</a></td>
+<td>健身质量数据，融合评分、动作、文本描述与表面肌电（sEMG），适合多模态 AQA 与缺失模态研究。</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AQA/" rel="tag"># AQA</a>
+              <a href="/tags/Dataset/" rel="tag"># Dataset</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2026/08/22/20260814/" rel="prev" title="Action Quality Assessment 动作质量评价调研">
+      <i class="fa fa-chevron-left"></i> Action Quality Assessment 动作质量评价调研
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2026/08/22/index/" rel="next" title="ABOUT">
+      ABOUT <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hanzhang Lu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hanzhang Lu</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
