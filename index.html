@@ -229,7 +229,332 @@
       
           <h2 id="👋-About-Me"><a href="#👋-About-Me" class="headerlink" title="👋 About Me"></a>👋 About Me</h2><p>Hi，我是鲁含章（Hanzhang Lu）✨</p>
 <p>🎓 🇨🇳南开大学 计算机科学与技术(B.Eng.)｜🇲🇴澳门大学 MSC in AI<br>💻 算法工程师｜计算机视觉 &amp; 推荐算法 ｜ 北京崭珀科技 ｜ 作业帮<br>🔧 Python&#x2F;C++｜PyTorch｜模型训练加速｜边缘部署｜SQL&#x2F;Hive</p>
-<p>✉️ <a href="mailto:&#x6c;&#x75;&#x68;&#x7a;&#107;&#x7a;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#111;&#x6d;">luhzkz@163.com</a><br>✉️ <a href="mailto:&#109;&#99;&#54;&#x35;&#x33;&#x33;&#x37;&#x40;&#x75;&#x6d;&#x2e;&#x65;&#100;&#117;&#46;&#109;&#x6f;">mc65337@um.edu.mo</a></p>
+<p>✉️ <a href="mailto:&#108;&#117;&#104;&#x7a;&#107;&#x7a;&#64;&#49;&#x36;&#x33;&#x2e;&#x63;&#111;&#109;">luhzkz@163.com</a><br>✉️ <a href="mailto:&#x6d;&#x63;&#54;&#x35;&#51;&#x33;&#x37;&#x40;&#117;&#x6d;&#46;&#x65;&#100;&#117;&#x2e;&#x6d;&#x6f;">mc65337@um.edu.mo</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/08/22/20260814/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hanzhang Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="含章可贞">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/08/22/20260814/" class="post-title-link" itemprop="url">Action Quality Assessment 动作质量评价调研</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2026-08-22 12:00:00" itemprop="dateCreated datePublished" datetime="2026-08-22T12:00:00+08:00">2026-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-08-24 16:27:06" itemprop="dateModified" datetime="2026-08-24T16:27:06+08:00">2026-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AQA/" itemprop="url" rel="index"><span itemprop="name">AQA</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Action-Quality-Assessment-动作质量评价调研"><a href="#Action-Quality-Assessment-动作质量评价调研" class="headerlink" title="Action Quality Assessment 动作质量评价调研"></a>Action Quality Assessment 动作质量评价调研</h1><p>Hanzhang</p>
+<h2 id="1-Dataset"><a href="#1-Dataset" class="headerlink" title="1. Dataset"></a>1. Dataset</h2><h3 id="1-1-竞技体操数据集"><a href="#1-1-竞技体操数据集" class="headerlink" title="1.1. 竞技体操数据集"></a>1.1. 竞技体操数据集</h3><p><strong>FineGym</strong>: 竞技体操数据集,仅动作分类，620.5GB共303 场比赛（1.1版本315场）的原始视频数据，4,883个片段实例，32697个子动作实例，共定义530类element动作，但只有354个类别实际有样本，总时长约708小时，标注时使用了一个决策树QA的方式让被训练的标注员标注</p>
+<p>url: <a target="_blank" rel="noopener" href="https://sdolivia.github.io/FineGym/">https://sdolivia.github.io/FineGym/</a></p>
+<p><img src="/2026/08/22/20260814/image.png" alt="imageinsert"><br>e.g.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;youtube_VIDEO_ID&#125;_E_&#123;大项目开始时间戳&#125;_&#123;大项目结束时间戳&#125;_A_&#123;子动作开始时间戳&#125;_&#123;子动作开始时间戳&#125; &#123;动作分类(99类或288类)&#125;</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0003_0005 240</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0006_0008 266</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0012_0013 271</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>FineGym-AQA</strong>：FineGym基础上加入E分执行分</p>
+<p>url: <a target="_blank" rel="noopener" href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
+<blockquote>
+<p>FineGym‑AQA 标注流水线总览。使用 YOLOv5、EasyOCR 检测识别运动员号码布；基于规则脚本解析官方 PDF 成绩册，提取运动员姓名、D 难度分、E 完成分、ND 中立扣分、T 总分。专家二次核验保证号码布‑分数匹配正确、项目标注一致。</p>
+</blockquote>
+<p><img src="/2026/08/22/20260814/image-9.png" alt="imageinsert"></p>
+<ul>
+<li>event: apparatus ID<ul>
+<li>1: VT (Vault)</li>
+<li>2: FX (Floor Exercise)</li>
+<li>3: BB (Balance Beam)</li>
+<li>4: UB (Uneven Bar)</li>
+</ul>
+</li>
+<li>timestamps: clip-level timestamps in the source video</li>
+<li>segments: fine-grained element&#x2F;Sub-action segments</li>
+<li>score: routine-level scores (diff, execution, nd,total)<ul>
+<li>diff：difficulty，难度分，整套动作的难度价值</li>
+<li><strong>execution：完成分，动作完成质量、姿态、落地等的扣分后得分</strong></li>
+<li>nd：neutral deduction，中立扣罚分，例如超时、出界等非动作质量类扣罚</li>
+<li>total：成套最终总分 &#x3D; 难度分 + 完成分 − 各类扣罚</li>
+</ul>
+</li>
+<li>name &#x2F; number: athlete metadata when available</li>
+</ul>
+<p>e.g.: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=0jqn1vxdhls">https://www.youtube.com/watch?v=0jqn1vxdhls</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;0jqn1vxdhls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;E_000133_000140&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;event&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">133.56</span><span class="punctuation">,</span> <span class="number">140.68</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Jordyn Wieber&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;number&quot;</span><span class="punctuation">:</span> <span class="string">&quot;8&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;score&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;diff&quot;</span><span class="punctuation">:</span> <span class="number">6.5</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;execution&quot;</span><span class="punctuation">:</span> <span class="number">9.6</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;nd&quot;</span><span class="punctuation">:</span> <span class="number">0.0</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">16.1</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;segments&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;A_0000_0007&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;stages&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">0.04</span><span class="punctuation">,</span> <span class="number">3.49</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">3.49</span><span class="punctuation">,</span> <span class="number">4.70</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">4.70</span><span class="punctuation">,</span> <span class="number">7.11</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;6.50&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-其他"><a href="#1-2-其他" class="headerlink" title="1.2. 其他"></a>1.2. 其他</h3><p>见IJCV2026综述部分</p>
+<h2 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h2><h3 id="2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions"><a href="#2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions" class="headerlink" title="2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions"></a>2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions</h3><p>homepage: <a target="_blank" rel="noopener" href="https://haoyin116.github.io/Survey_of_AQA/">https://haoyin116.github.io/Survey_of_AQA/</a></p>
+<h4 id="2-1-1-方法分类"><a href="#2-1-1-方法分类" class="headerlink" title="2.1.1 方法分类"></a>2.1.1 方法分类</h4><p><img src="/2026/08/22/20260814/image-4.png" alt="imageinsert"></p>
+<h5 id="统计式方法——有监督学习"><a href="#统计式方法——有监督学习" class="headerlink" title="统计式方法——有监督学习"></a>统计式方法——有监督学习</h5><blockquote>
+<ol>
+<li><strong>回归打分</strong>：模型输出连续数值分数，例如 0‑100 之间任意实数，适合细粒度动作质量分析。典型模型包括线性回归、深度神经网络、支持向量回归 SVR 等</li>
+<li><strong>分类打分</strong>：模型输出离散类别标签，对动作质量做粗粒度划分；该模式有时便于招募非专业人员完成数据标注</li>
+<li><strong>成对排序</strong>：模型对比两个或多个样本，判断哪一个动作质量更高。该方法不能独立完成完整评估任务，一般和其他方法搭配使用</li>
+</ol>
+</blockquote>
+<h5 id="基于规则的打分"><a href="#基于规则的打分" class="headerlink" title="基于规则的打分"></a>基于规则的打分</h5><blockquote>
+<p>和统计方法不同，基于规则的方法依靠一套规则处理特征与符号，计算动作质量得分。规则可以人工由领域专家制定，也可以从数据中学习得到。基于规则的方法能够回溯每一项特征对最终分数的影响，因果关系明确，具备良好可解释性。参考文献 Hierarchical neurosymbolic approach for comprehensive and explainable action quality assessment CVPR2024<br>使用专门的人体姿态估计器、物体检测器（跳板检测器、水花检测器）提取以执行者‑物体为中心的信息；然后使用规则处理这些信息，生成包含分数在内的完整 AQA 评估报告。</p>
+</blockquote>
+<h5 id="AQA-评估的不同层级"><a href="#AQA-评估的不同层级" class="headerlink" title="AQA 评估的不同层级"></a>AQA 评估的不同层级</h5><blockquote>
+<ol>
+<li><strong>基础 AQA</strong>：模型接收动作视频，直接输出质量得分。理想情况下，模型提取所有会影响动作分数的时空特征，给特征赋予对应权重，综合输出最终分数。</li>
+<li><strong>深度分析评估</strong>：模型不仅输出总分，还逐条列出动作的优劣点，评估各项失误的严重程度，基于上述分析计算最终分数。</li>
+<li><strong>反馈生成</strong>：模型在评估好坏之后，给出可供执行者参考的改进建议。这需要模型内部可以记录动作的各项优缺点。举例：模型识别出跳水运动员屈体动作腿部弯曲，则可以给出建议，训练屈体姿态时保持腿部伸直，以此提高得分。</li>
+</ol>
+</blockquote>
+<h4 id="2-1-2-评价指标"><a href="#2-1-2-评价指标" class="headerlink" title="2.1.2 评价指标"></a>2.1.2 评价指标</h4><h5 id="1-Spearman’s-Rank-Correlation-记作-rho"><a href="#1-Spearman’s-Rank-Correlation-记作-rho" class="headerlink" title="1. Spearman’s Rank Correlation 记作$\rho$"></a>1. Spearman’s Rank Correlation 记作$\rho$</h5><p>衡量真实排序与预测排序之间单调关系的强弱与方向</p>
+<p><img src="/2026/08/22/20260814/image-1.png" alt="imageinsert"></p>
+<h5 id="2-Relative-l2-Distance-R-−-l2"><a href="#2-Relative-l2-Distance-R-−-l2" class="headerlink" title="2. Relative l2 Distance.(R − l2)"></a>2. Relative l2 Distance.(R − l2)</h5><p>重点关注预测分数的真实数值大小,相比传统 L2 距离，(R‑l2)考虑不同动作类别之间的分数区间，更适用于跨类别模型训练。</p>
+<p><img src="/2026/08/22/20260814/image-2.png" alt="imageinsert"></p>
+<h5 id="3-Accuracy"><a href="#3-Accuracy" class="headerlink" title="3. Accuracy"></a>3. Accuracy</h5><p>成对排序任务、分类任务普遍使用准确率。</p>
+<p><img src="/2026/08/22/20260814/image-3.png" alt="imageinsert"></p>
+<h4 id="2-1-3-数据集"><a href="#2-1-3-数据集" class="headerlink" title="2.1.3 数据集"></a>2.1.3 数据集</h4><p>列出文章中提到的体育运动的数据集：15 个数据集，覆盖 10 类运动</p>
+<blockquote>
+<ul>
+<li><strong>MIT‑Dive &amp; MIT‑Skate</strong>（2014 ECCV）：AQA 开山数据集。MIT‑Dive：159 条奥运会跳水慢动作视频，60fps，平均 2.5 秒，裁判得分区间 20‑100 分。MIT‑Skate：150 个花样滑冰样本，24fps，平均 175 秒，分数 0‑100 分。</li>
+<li><strong>UNLV‑Dive &amp; UNLV‑Vault</strong>（2017 CVPR Workshops）：MIT‑Dive 的扩展，UNLV‑Dive 370 条跳水样本，平均 3.8s；UNLV‑Vault 176 体操跳马样本，平均 2.8s。得分由完成分乘以 &#x2F; 加上难度分得到。</li>
+<li><strong>AQA‑7</strong>（2017 WACV）：1189 条奥运视频，7 大类动作，平均 6.7s，每个动作类别拥有独立计分体系。</li>
+<li><strong>MTL‑AQA</strong>（2019 CVPR）：1412 条跳水比赛样本；首次引入自然语言定性描述标注，同时将跳水动作拆解为姿态、倒立、旋转类型、空翻、扭转五大细粒度子类别；包含七位裁判给出的难度分与执行分。</li>
+<li><strong>Fis‑V</strong>（2019 TCSVT）：500 条女子花样滑冰短节目视频，来自 20 个国家 149 名运动员；25fps，平均 170 秒；标注包含技术元素总分 TES、节目内容分 PCS，均来自 9 位专业裁判打分。</li>
+<li><strong>TASD‑2</strong>（2020 ECCV）：606 条双人跳水正面视角视频，平均 4.1s，标注动作起止帧、最终得分。</li>
+<li><strong>Rhy.Gym（艺术体操数据集）</strong>（2020 ACM MM）：1000 条艺术体操比赛视频，球、棒、圈、带四类器械各 250 条样本，平均 95 秒；标注难度分、完成分、总分（难度 + 完成）。</li>
+<li><strong>FR‑FS</strong>（2020 ACM MM）：417 条花样滑冰样本，起跳、旋转、落冰关键动作，276 条平稳落冰、141 条摔倒样本，二元正误标签。</li>
+<li><strong>SMART</strong>（2021 IJCV）：5000 条样本，10 个运动项目，平均 420 帧；子动作标签与评估分数。</li>
+<li><strong>FineDiving</strong>（2022 CVPR）：3000 条跳水赛事视频，52 种动作类型、29 种子动作、23 个难度等级，平均 4.2 秒；双层语义与时间结构标注，动作级、步骤级标签，以及时间边界；使用赛事裁判原始分数。</li>
+<li><strong>LOGO</strong>（2023 CVPR）：花样游泳长视频多人数据集。200 条赛事样本，每帧画面 8 名运动员；平均时长 204.2 秒；逐帧标注 12 种动作、17 种队形，裁判分项得分与总分。</li>
+<li><strong>FineFS</strong>（2023 ACM MM）：72 场国际 A 级花样滑冰赛事，1167 条样本，RGB + 骨骼，平均 215 秒；四级分数、两层子动作类别、时间分割标注，适配 ISU 新赛季规则。</li>
+<li><strong>PaSk</strong>（2023 IJCV）：双人花样滑冰数据集，1018 条样本；双人存在主次协作关系；标注独立动作起止帧、裁判打分，平均 10.7 秒。</li>
+</ul>
+</blockquote>
+<h4 id="2-1-4-部分方法"><a href="#2-1-4-部分方法" class="headerlink" title="2.1.4 部分方法"></a>2.1.4 部分方法</h4><h5 id="2-1-4-1-不确定性建模方法与对比学习方法"><a href="#2-1-4-1-不确定性建模方法与对比学习方法" class="headerlink" title="2.1.4.1 不确定性建模方法与对比学习方法"></a>2.1.4.1 不确定性建模方法与对比学习方法</h5><p><img src="/2026/08/22/20260814/image-5.png" alt="imageinsert"></p>
+<blockquote>
+<p>公平一直是竞技体育的核心关切。尽管设置多裁判打分体系来尽可能保障比赛公平，但依然存在各类偏见：例如本国选手偏袒的民族主义偏见 [155,156]，裁判偏爱高难度动作的难度偏见 [157]。早期基础研究 [2,3,14,16,17,30,58] 直接把裁判打分作为真值，没有考虑主观评估带来的不确定性与歧义。直接依赖主观分数，影响模型精度与公平性，阻碍实际落地应用。因此，如何从现有打分标签挖掘有效信息、提升 AQA 精度，成为研究热点。研究者引入不确定性建模 [158‑163]、对比回归 [31,164] 等方法，降低人打分带来的主观偏见。代表性工作简要说明与性能见图 13、表 5。</p>
+<p>Tang 等人 [158] 最早将不确定性建模引入 AQA，缓解多位裁判主观打分带来的标签固有歧义，提出不确定性感知分数分布学习 USDL。该方法将标签分数建模为高斯分布，计算输入视频预测分数分布；最小化两个分布之间 KL 散度，优化网络，更好拟合真实打分过程。借鉴奥运会多裁判体系，USDL 可以扩展为多分支，不同分支输出分数加权融合得到最终结果。其他研究者进一步拓展基于不确定性的方法。Zhou 等人 [159] 提出 UDAQA 不确定性驱动 AQA，由确定性分支与隐变量分支组成；确定性分支 I3D [66] 提取视频特征；隐变量分支利用条件变分自编码器 CVAE 建模视频固有的歧义；两个分支结合预测分数。Li 等人 [161] 提出高斯引导帧序列编码器网络；ResNet [68] 提取视频特征，送入时序编码器卷积网络 TECN 提取动作时空语义信息；使用高斯损失最大化预测分数拟合标签分布的概率。Zhang 等人 [163] 提出分布自编码器 DAE 回归模型；将视频特征编码为分数分布，利用重参数技巧采样预测结果，同时学习分数与不确定性。Majeedi 等人 [162] 提出 RICA2，基于评分细则做校准式动作评估；将动作步骤、评分准则表示为有向无环图 DAG；GNN 为每个动作步骤生成概率嵌入，向上传播计算最终分数，捕捉打分流程中的不确定性。</p>
+<p>和不确定性建模不同，对比回归 [31,154,164‑167] 通过样本与参考视频做对比，降低主观打分偏差。Jain 等人 [164,168] 提出参考引导回归 RGR，把动作打分任务转化为动作视频相似度打分任务；使用 Siamese‑LSTM 网络成对处理视频，C3D [64] 提取片段特征送入 LSTM 生成全局动作特征；拼接特征送入回归模型输出相似度判断。RGR 还可以计算样本与参考视频片段相似度，实现更细粒度、可解释打分。Yu 等人 [31] 提出 CoRe 对比回归框架；依据动作类别与难度，为每个样本视频选择参考视频；I3D 提取成对时空特征，结合参考分数，送入群组感知回归树 GART；GART 由粗到细对特征分类，回归两个视频之间分数差值。</p>
+</blockquote>
+<h5 id="2-1-4-2-Multitask-Multimodal-AQA"><a href="#2-1-4-2-Multitask-Multimodal-AQA" class="headerlink" title="2.1.4.2 Multitask &amp; Multimodal AQA"></a>2.1.4.2 Multitask &amp; Multimodal AQA</h5><p><img src="/2026/08/22/20260814/image-8.png" alt="imageinsert"><br><img src="/2026/08/22/20260814/image-6.png" alt="imageinsert"></p>
+<table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>文献</th>
+<th>模态&#x2F;任务</th>
+<th>核心模块</th>
+<th>核心创新与特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C3D‑AVG‑MTL</td>
+<td>Parmar &amp; Morris [21,178]</td>
+<td>RGB视频；多任务（打分+动作分类+文本字幕生成）</td>
+<td>C3D共享骨干网络，多任务分支（分数回归、动作分类、字幕生成）</td>
+<td><strong>首个AQA多任务框架</strong>；把文本模态引入AQA；端到端联合训练，同时输出打分+细粒度动作自然语言描述</td>
+</tr>
+<tr>
+<td>SGN（语义引导网络）</td>
+<td>Du et al. [169]</td>
+<td>RGB视频 + 语义知识</td>
+<td>师生架构、可学习原子查询、注意力机制、多对齐损失</td>
+<td>教师网络注入语义知识，学生网络做适配；实现视觉‑语义特征对齐</td>
+</tr>
+<tr>
+<td>VATP‑Net（视觉‑语义对齐时序解析网络）</td>
+<td>Gedamu et al. [174]</td>
+<td>RGB视频 + 语义</td>
+<td>自监督时序解析模块、多模态交互模块</td>
+<td>无需外部标注；挖掘动作内部时序结构，学习场景无关的动作执行表征</td>
+</tr>
+<tr>
+<td><strong>NAE（叙事动作评估）</strong></td>
+<td>Zhang et al. [177]</td>
+<td>RGB视频 + 文本生成</td>
+<td>视频编码器、多头交叉注意力提示学习、分数引导token、三token注意力掩码</td>
+<td>将打分回归转为视频‑文本匹配任务；直接输出包含动作细节、分数的完整自然语言评估报告</td>
+</tr>
+<tr>
+<td>ST‑GCN（时空图卷积网络）</td>
+<td>Li et al. [25]</td>
+<td>骨骼姿态</td>
+<td>时空图卷积GCN</td>
+<td>在时空维度提取骨骼与深度姿态特征，回归动作质量分数</td>
+</tr>
+<tr>
+<td>MS‑GCN（多骨骼结构图卷积网络）</td>
+<td>Lei et al. [170]</td>
+<td>长视频骨骼序列</td>
+<td>多类型骨骼图、时序注意力模块</td>
+<td>将长骨骼序列切分；构建自连接&#x2F;部件内&#x2F;部件间三类图，适配长视频评估</td>
+</tr>
+<tr>
+<td>RI</td>
+<td>Zheng et al. [172]</td>
+<td>骨骼姿态</td>
+<td>关节相对方向点积矩阵</td>
+<td>消除人体朝向干扰，解决模型对朝向变化敏感问题</td>
+</tr>
+<tr>
+<td>EGCN++</td>
+<td>Bruce et al. [29]</td>
+<td>骨骼姿态</td>
+<td>图卷积、集成学习；数据集重标注</td>
+<td>数据层融合位置+朝向；集成多个GCN预测；重标注KIMORE数据集为二分类标签，提升鲁棒性</td>
+</tr>
+<tr>
+<td>2M‑AF（多模态评估框架）</td>
+<td>Ding et al. [173]</td>
+<td>RGB视频 + 骨骼</td>
+<td>SME‑GCN、I3D、偏好融合模块PFM</td>
+<td>分别提取骨骼、RGB特征，通过偏好融合模块完成多模态特征融合后回归分数</td>
+</tr>
+<tr>
+<td>EK‑GCN</td>
+<td>He et al. [175]</td>
+<td>骨骼姿态</td>
+<td>专家知识加权GCN、门控池化、Transformer</td>
+<td>专家知识引导图权重，聚焦关键关节；门控聚合，Transformer建模长时序依赖</td>
+</tr>
+<tr>
+<td>DNLA（判别式非局部注意力）</td>
+<td>Zahan et al. [176,190]</td>
+<td>RGB视频 + 骨骼</td>
+<td>跨时序稀疏特征提取</td>
+<td>过滤冗余信息，强制模型聚焦关键动作片段、关键帧</td>
+</tr>
+<tr>
+<td>PISA</td>
+<td>Parmar et al. [27]</td>
+<td>视频 + 音频</td>
+<td>3DCNN(视频)、2DCNN(音频)、全连接层</td>
+<td>音乐AQA；融合音视频，输出钢琴演奏技能等级</td>
+</tr>
+<tr>
+<td>Skating‑Mixer</td>
+<td>Xia et al. [171]</td>
+<td>视频 + 音频</td>
+<td>CNN、MFCC、带记忆机制MLP</td>
+<td>花样滑冰音视频融合；MLP增加记忆单元，可以复用历史帧信息</td>
+</tr>
+<tr>
+<td>PAMFN（渐进自适应多模态融合网络）</td>
+<td>Zeng &amp; Zheng et al. [23]</td>
+<td>RGB + 光流 + 音频</td>
+<td>多独立模态分支、模态特征解码器、自适应融合模块</td>
+<td>渐进式多模态融合；自适应选择最优融合策略，完成动作质量评估</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-CVPR-2020-Oral-FineGym"><a href="#2-2-CVPR-2020-Oral-FineGym" class="headerlink" title="2.2. CVPR 2020 Oral FineGym"></a>2.2. CVPR 2020 Oral FineGym</h3><h4 id="2-2-1-贡献"><a href="#2-2-1-贡献" class="headerlink" title="2.2.1 贡献"></a>2.2.1 贡献</h4><p>1）提出 FineGym 数据集</p>
+<p>2）基于 FineGym 进行了大量实验研究，发现：</p>
+<ul>
+<li>对event和set级别的识别：<ul>
+<li>TSN只使用3帧，即不到完整视频 5% 的帧数，却已经获得极高准确率。这说明Event 和 Set 级别的分类主要依赖静态视觉信息。</li>
+<li>在 Event 识别中RGB优于Flow，背景、器械等静态信息可以帮助分类；到了 Set 级别Flow已经超过RGB，说明随着粒度变细，动作本身逐渐比背景更重要<br><img src="/2026/08/22/20260814/image-14.png" alt="alttext"></li>
+</ul>
+</li>
+<li>Element级动作识别<ul>
+<li>长尾分布是巨大挑战，Gym288中很多类别只有少量样本</li>
+<li>外观信息作用下降，光流特征通常明显优于RGB</li>
+<li>时序建模至关重要</li>
+<li>视频预训练不一定有帮助I3D通常先在ImageNet，Kinetics预训练，但FineGym中提升并不明显，因为Kinetics中的粗粒度动作模式与体操元素动作差异过大</li>
+<li>姿态估计方法ST-GCN表现最差，大量关键帧中人体检测直接丢失</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2026/08/22/20260814/image-13.png" alt="alttext"></p>
+<h3 id="2-3-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment"><a href="#2-3-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment" class="headerlink" title="2.3. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment"></a>2.3. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment</h3><p>github：<a target="_blank" rel="noopener" href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
+<p>paper：<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Li_FineGrade_A_Rule-Consistent_Scoring_Framework_for_Fine-Grained_Action_Quality_Assessment_CVPRF_2026_paper.pdf">cvpr2026</a></p>
+<p><img src="/2026/08/22/20260814/image-7.png" alt="imageinsert"></p>
+<p><img src="/2026/08/22/20260814/image-10.png" alt="imageinsert"><br>视觉主干采用在 Kinetics 预训练的 VST</p>
+<p><strong>论文局限：</strong> FineGym‑AQA 数据集来自官方比赛成绩册。成绩册可以拿到每个动作的 D 价值，但是拿不到每个动作分别扣了多少 E 分，只有整套 E 的最终数字。<br>模型的E分也是在整体上的预测，可解释性存疑。</p>
+<h2 id="3-局限性"><a href="#3-局限性" class="headerlink" title="3. 局限性"></a>3. 局限性</h2><h3 id="3-1-评分标准有变化"><a href="#3-1-评分标准有变化" class="headerlink" title="3.1 评分标准有变化"></a>3.1 评分标准有变化</h3><p>注意到竞技体操的评分标准是会根据奥运赛季有变化的，过往的数据集里的E分有可能只适用于当年的情况，这对模型回归可能存在干扰。</p>
+<h3 id="3-2-主观分数的不确定性"><a href="#3-2-主观分数的不确定性" class="headerlink" title="3.2 主观分数的不确定性"></a>3.2 主观分数的不确定性</h3><blockquote>
+<p>尽管设置多裁判打分体系来尽可能保障比赛公平，但依然存在各类偏见：例如本国选手偏袒的民族主义偏见 [155,156]，裁判偏爱高难度动作的难度偏见 [157]。早期基础研究 [2,3,14,16,17,30,58] 直接把裁判打分作为真值，没有考虑主观评估带来的不确定性与歧义。直接依赖主观分数，影响模型精度与公平性，阻碍实际落地应用。</p>
+</blockquote>
+<h3 id="3-3-数据集"><a href="#3-3-数据集" class="headerlink" title="3.3 数据集"></a>3.3 数据集</h3><p>1）跳水的数据集非常多，但竞技体操的数据有限，看是否还能扩充。<br>2）缺少高帧率数据，高帧率数据能够消除伪影等影响<br>3）AIGC数据可能可以增加数据规模，例如在原视频上可控的微调运动员姿态，生成项目上不同的分值，反馈给模型做训练</p>
+<h3 id="3-4-模态"><a href="#3-4-模态" class="headerlink" title="3.4 模态"></a>3.4 模态</h3><p>现在在跳水领域，已经有视频-文本-骨骼姿态-光流 等模态的融合，看竞技体操能否移植或者。另外可以考虑在数据采集上增加模态，例如：<br>1）多视角数据，消除遮挡物影响；<br>2）声音，不过现场噪音会带干扰信号，仅是一种思路：a.入水撞击水面的声音，水花越小撞击声越小；b. 竞技体操：落地撞击垫子的响度，判断落地冲击大小、是否重重砸地扣分；c. 艺术体操：动作与背景音乐节拍同步性分析</p>
+<h3 id="3-5-E分粒度"><a href="#3-5-E分粒度" class="headerlink" title="3.5 E分粒度"></a>3.5 E分粒度</h3><blockquote>
+<p>E 组裁判盯着整套成套，<strong>每看到一处错误就记录这个错误以及扣多少分</strong>：</p>
+<ul>
+<li>某个空翻落地踩一步：‑0.1</li>
+<li>做跳转动作膝盖弯了：‑0.1</li>
+</ul>
+<ol>
+<li>但是：<strong>裁判不会给每个动作算一个 “子 E 分数”</strong>。而是全部错误扣分累加，从满分<strong>10.0</strong>往下整体扣减，输出<strong>整套唯一的 E 分</strong>。<br><img src="/2026/08/22/20260814/image-11.png" alt="imageinsert"></li>
+</ol>
+</blockquote>
+<p>模型算出的E分可解释性不稳定，可能来自于此，我们需要让模型指出是具体哪个动作导致的E分扣分。这需要人工逐帧标注<strong>每个动作上的 E 扣分数值</strong>，或者考虑让大模型根据现有数据集视频和总打分给出高可信的文字标注，标注请专业人士审核，构建新的数据集。</p>
+<h2 id="TODOs"><a href="#TODOs" class="headerlink" title="TODOs:"></a>TODOs:</h2><h3 id="1-下载数据集FingGym-AQA，复现FineGrade"><a href="#1-下载数据集FingGym-AQA，复现FineGrade" class="headerlink" title="1. 下载数据集FingGym-AQA，复现FineGrade"></a>1. 下载数据集FingGym-AQA，复现FineGrade</h3><h3 id="2-测试大模型标注FingGym-AQA细粒度E分的结果"><a href="#2-测试大模型标注FingGym-AQA细粒度E分的结果" class="headerlink" title="2. 测试大模型标注FingGym-AQA细粒度E分的结果"></a>2. 测试大模型标注FingGym-AQA细粒度E分的结果</h3><h3 id="3-读后面不确定性建模和多模态AQA方法的论文"><a href="#3-读后面不确定性建模和多模态AQA方法的论文" class="headerlink" title="3. 读后面不确定性建模和多模态AQA方法的论文"></a>3. 读后面不确定性建模和多模态AQA方法的论文</h3><h3 id="others："><a href="#others：" class="headerlink" title="others："></a>others：</h3><ol>
+<li><p>Xumin Yu, Yongming Rao, Wenliang Zhao, Jiwen Lu,and Jie Zhou. Group-aware contrastive regression for action quality assessment. In Proceedings of the IEEE&#x2F;CVF International Conference on Computer Vision, pages 7919–7928</p>
+</li>
+<li><p>Yansong Tang, Zanlin Ni, Jiahuan Zhou, Danyang Zhang,  Jiwen Lu, Ying Wu, and Jie Zhou. Uncertainty-aware score distribution learning for action quality assessment. In Proceedings of the IEEE&#x2F;CVF Conference on Computer Vision and Pattern Recognition, pages 9839–9848, 2020. 17, 18, 19 </p>
+</li>
+<li><p>Caixia Zhou, Yaping Huang, and Haibin Ling.  Uncertainty-driven action quality assessment. arXiv preprint arXiv:2207.14513, 2022. 17, 18, 19 </p>
+</li>
+<li><p>Anandi Karunaratne, Chamin Jayasooriya, Sampath  Deegalla, and Rajitha Navarathna. Objectively measure player performance on olympic weightlifting. In International Conference on Information and Automation for Sustainability, pages 410–415. IEEE, 2021. 17 </p>
+</li>
+<li><p>Ming-Zhe Li, Hong-Bo Zhang, Li-Jia Dong, Qing Lei,  and Ji-Xiang Du. Gaussian guided frame sequence encoder network for action quality assessment. Complex &amp; Intelligent Systems, 9(2):1963–1974, 2023. 17, 18, 19 </p>
+</li>
+<li><p>Abrar Majeedi, Viswanatha Reddy Gajjala, Satya Sai  Srinath Namburi GNVV, and Yin Li. Rica2: Rubricinformed, calibrated assessment of actions. arXiv preprint arXiv:2408.02138, 2024. 17, 18, 19</p>
+</li>
+<li><p>Boyu Zhang, Jiayuan Chen, Yinfei Xu, Hui Zhang,  Xu Yang, and Xin Geng. Auto-encoding score distribution regression for action quality assessment. Neural Computing and Applications, 36(2):929–942, 2024. 17, 18, 19 164. Hiteshi Jain, Gaurav Harit, and Avinash Sharma. Action  quality assessment using siamese network-based deep metric learning. IEEE Transactions on Circuits and Systems for Video Technology, 31(6):2260–2273, 2021. 17, 18, 19</p>
+</li>
+<li><p>Hiteshi Jain, Gaurav Harit, and Avinash Sharma. Action quality assessment using siamese network-based deep metric learning. IEEE Transactions on Circuits and Systems for Video Technology, 31(6):2260–2273, 2021</p>
+</li>
+</ol>
 
       
     </div>
@@ -657,313 +982,6 @@
 <td>健身质量数据，融合评分、动作、文本描述与表面肌电（sEMG），适合多模态 AQA 与缺失模态研究。</td>
 </tr>
 </tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/08/22/20260814/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hanzhang Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="含章可贞">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/08/22/20260814/" class="post-title-link" itemprop="url">Action Quality Assessment 动作质量评价调研</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2026-08-22 12:00:00" itemprop="dateCreated datePublished" datetime="2026-08-22T12:00:00+08:00">2026-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-08-24 16:08:01" itemprop="dateModified" datetime="2026-08-24T16:08:01+08:00">2026-08-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AQA/" itemprop="url" rel="index"><span itemprop="name">AQA</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Action-Quality-Assessment-动作质量评价调研"><a href="#Action-Quality-Assessment-动作质量评价调研" class="headerlink" title="Action Quality Assessment 动作质量评价调研"></a>Action Quality Assessment 动作质量评价调研</h1><p>Hanzhang</p>
-<h2 id="1-Dataset"><a href="#1-Dataset" class="headerlink" title="1. Dataset"></a>1. Dataset</h2><h3 id="1-1-竞技体操数据集"><a href="#1-1-竞技体操数据集" class="headerlink" title="1.1. 竞技体操数据集"></a>1.1. 竞技体操数据集</h3><p><strong>FineGym</strong>: 竞技体操数据集,仅动作分类，620.5GB共303 场比赛（1.1版本315场）的原始视频数据，4,883个片段实例，32697个子动作实例，共定义530类element动作，但只有354个类别实际有样本，总时长约708小时，标注时使用了一个决策树QA的方式让被训练的标注员标注</p>
-<p>url: <a target="_blank" rel="noopener" href="https://sdolivia.github.io/FineGym/">https://sdolivia.github.io/FineGym/</a></p>
-<p><img src="/2026/08/22/20260814/image.png" alt="imageinsert"><br>e.g.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;youtube_VIDEO_ID&#125;_E_&#123;大项目开始时间戳&#125;_&#123;大项目结束时间戳&#125;_A_&#123;子动作开始时间戳&#125;_&#123;子动作开始时间戳&#125; &#123;动作分类(99类或288类)&#125;</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0003_0005 240</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0006_0008 266</span><br><span class="line">0LtLS9wROrk_E_002407_002435_A_0012_0013 271</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>FineGym-AQA</strong>：FineGym基础上加入E分执行分</p>
-<p>url: <a target="_blank" rel="noopener" href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
-<blockquote>
-<p>FineGym‑AQA 标注流水线总览。使用 YOLOv5、EasyOCR 检测识别运动员号码布；基于规则脚本解析官方 PDF 成绩册，提取运动员姓名、D 难度分、E 完成分、ND 中立扣分、T 总分。专家二次核验保证号码布‑分数匹配正确、项目标注一致。</p>
-</blockquote>
-<p><img src="/2026/08/22/20260814/image-9.png" alt="imageinsert"></p>
-<ul>
-<li>event: apparatus ID<ul>
-<li>1: VT (Vault)</li>
-<li>2: FX (Floor Exercise)</li>
-<li>3: BB (Balance Beam)</li>
-<li>4: UB (Uneven Bar)</li>
-</ul>
-</li>
-<li>timestamps: clip-level timestamps in the source video</li>
-<li>segments: fine-grained element&#x2F;Sub-action segments</li>
-<li>score: routine-level scores (diff, execution, nd,total)<ul>
-<li>diff：difficulty，难度分，整套动作的难度价值</li>
-<li><strong>execution：完成分，动作完成质量、姿态、落地等的扣分后得分</strong></li>
-<li>nd：neutral deduction，中立扣罚分，例如超时、出界等非动作质量类扣罚</li>
-<li>total：成套最终总分 &#x3D; 难度分 + 完成分 − 各类扣罚</li>
-</ul>
-</li>
-<li>name &#x2F; number: athlete metadata when available</li>
-</ul>
-<p>e.g.: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=0jqn1vxdhls">https://www.youtube.com/watch?v=0jqn1vxdhls</a></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;0jqn1vxdhls&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;E_000133_000140&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;event&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">133.56</span><span class="punctuation">,</span> <span class="number">140.68</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Jordyn Wieber&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;number&quot;</span><span class="punctuation">:</span> <span class="string">&quot;8&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;score&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;diff&quot;</span><span class="punctuation">:</span> <span class="number">6.5</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;execution&quot;</span><span class="punctuation">:</span> <span class="number">9.6</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;nd&quot;</span><span class="punctuation">:</span> <span class="number">0.0</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">16.1</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;segments&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;A_0000_0007&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;stages&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;timestamps&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">[</span><span class="number">0.04</span><span class="punctuation">,</span> <span class="number">3.49</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">3.49</span><span class="punctuation">,</span> <span class="number">4.70</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="number">4.70</span><span class="punctuation">,</span> <span class="number">7.11</span><span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">          <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;6.50&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-其他"><a href="#1-2-其他" class="headerlink" title="1.2. 其他"></a>1.2. 其他</h3><p>见IJCV2026综述部分</p>
-<h2 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h2><h3 id="2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions"><a href="#2-1-综述-IJCV-2026-A-Decade-of-Action-Quality-Assessment-Largest-Systematic-Survey-of-Trends-Challenges-and-Future-Directions" class="headerlink" title="2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions"></a>2.1. 综述 IJCV 2026: A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions</h3><p>homepage: <a target="_blank" rel="noopener" href="https://haoyin116.github.io/Survey_of_AQA/">https://haoyin116.github.io/Survey_of_AQA/</a></p>
-<h4 id="2-1-1-方法分类"><a href="#2-1-1-方法分类" class="headerlink" title="2.1.1 方法分类"></a>2.1.1 方法分类</h4><p><img src="/2026/08/22/20260814/image-4.png" alt="imageinsert"></p>
-<h5 id="统计式方法——有监督学习"><a href="#统计式方法——有监督学习" class="headerlink" title="统计式方法——有监督学习"></a>统计式方法——有监督学习</h5><blockquote>
-<ol>
-<li><strong>回归打分</strong>：模型输出连续数值分数，例如 0‑100 之间任意实数，适合细粒度动作质量分析。典型模型包括线性回归、深度神经网络、支持向量回归 SVR 等</li>
-<li><strong>分类打分</strong>：模型输出离散类别标签，对动作质量做粗粒度划分；该模式有时便于招募非专业人员完成数据标注</li>
-<li><strong>成对排序</strong>：模型对比两个或多个样本，判断哪一个动作质量更高。该方法不能独立完成完整评估任务，一般和其他方法搭配使用</li>
-</ol>
-</blockquote>
-<h5 id="基于规则的打分"><a href="#基于规则的打分" class="headerlink" title="基于规则的打分"></a>基于规则的打分</h5><blockquote>
-<p>和统计方法不同，基于规则的方法依靠一套规则处理特征与符号，计算动作质量得分。规则可以人工由领域专家制定，也可以从数据中学习得到。基于规则的方法能够回溯每一项特征对最终分数的影响，因果关系明确，具备良好可解释性。参考文献 Hierarchical neurosymbolic approach for comprehensive and explainable action quality assessment CVPR2024<br>使用专门的人体姿态估计器、物体检测器（跳板检测器、水花检测器）提取以执行者‑物体为中心的信息；然后使用规则处理这些信息，生成包含分数在内的完整 AQA 评估报告。</p>
-</blockquote>
-<h5 id="AQA-评估的不同层级"><a href="#AQA-评估的不同层级" class="headerlink" title="AQA 评估的不同层级"></a>AQA 评估的不同层级</h5><blockquote>
-<ol>
-<li><strong>基础 AQA</strong>：模型接收动作视频，直接输出质量得分。理想情况下，模型提取所有会影响动作分数的时空特征，给特征赋予对应权重，综合输出最终分数。</li>
-<li><strong>深度分析评估</strong>：模型不仅输出总分，还逐条列出动作的优劣点，评估各项失误的严重程度，基于上述分析计算最终分数。</li>
-<li><strong>反馈生成</strong>：模型在评估好坏之后，给出可供执行者参考的改进建议。这需要模型内部可以记录动作的各项优缺点。举例：模型识别出跳水运动员屈体动作腿部弯曲，则可以给出建议，训练屈体姿态时保持腿部伸直，以此提高得分。</li>
-</ol>
-</blockquote>
-<h4 id="2-1-2-评价指标"><a href="#2-1-2-评价指标" class="headerlink" title="2.1.2 评价指标"></a>2.1.2 评价指标</h4><h5 id="1-Spearman’s-Rank-Correlation-记作-rho"><a href="#1-Spearman’s-Rank-Correlation-记作-rho" class="headerlink" title="1. Spearman’s Rank Correlation 记作$\rho$"></a>1. Spearman’s Rank Correlation 记作$\rho$</h5><p>衡量真实排序与预测排序之间单调关系的强弱与方向</p>
-<p><img src="/2026/08/22/20260814/image-1.png" alt="imageinsert"></p>
-<h5 id="2-Relative-l2-Distance-R-−-l2"><a href="#2-Relative-l2-Distance-R-−-l2" class="headerlink" title="2. Relative l2 Distance.(R − l2)"></a>2. Relative l2 Distance.(R − l2)</h5><p>重点关注预测分数的真实数值大小,相比传统 L2 距离，(R‑l2)考虑不同动作类别之间的分数区间，更适用于跨类别模型训练。</p>
-<p><img src="/2026/08/22/20260814/image-2.png" alt="imageinsert"></p>
-<h5 id="3-Accuracy"><a href="#3-Accuracy" class="headerlink" title="3. Accuracy"></a>3. Accuracy</h5><p>成对排序任务、分类任务普遍使用准确率。</p>
-<p><img src="/2026/08/22/20260814/image-3.png" alt="imageinsert"></p>
-<h4 id="2-1-3-数据集"><a href="#2-1-3-数据集" class="headerlink" title="2.1.3 数据集"></a>2.1.3 数据集</h4><p>列出文章中提到的体育运动的数据集：15 个数据集，覆盖 10 类运动</p>
-<blockquote>
-<ul>
-<li><strong>MIT‑Dive &amp; MIT‑Skate</strong>（2014 ECCV）：AQA 开山数据集。MIT‑Dive：159 条奥运会跳水慢动作视频，60fps，平均 2.5 秒，裁判得分区间 20‑100 分。MIT‑Skate：150 个花样滑冰样本，24fps，平均 175 秒，分数 0‑100 分。</li>
-<li><strong>UNLV‑Dive &amp; UNLV‑Vault</strong>（2017 CVPR Workshops）：MIT‑Dive 的扩展，UNLV‑Dive 370 条跳水样本，平均 3.8s；UNLV‑Vault 176 体操跳马样本，平均 2.8s。得分由完成分乘以 &#x2F; 加上难度分得到。</li>
-<li><strong>AQA‑7</strong>（2017 WACV）：1189 条奥运视频，7 大类动作，平均 6.7s，每个动作类别拥有独立计分体系。</li>
-<li><strong>MTL‑AQA</strong>（2019 CVPR）：1412 条跳水比赛样本；首次引入自然语言定性描述标注，同时将跳水动作拆解为姿态、倒立、旋转类型、空翻、扭转五大细粒度子类别；包含七位裁判给出的难度分与执行分。</li>
-<li><strong>Fis‑V</strong>（2019 TCSVT）：500 条女子花样滑冰短节目视频，来自 20 个国家 149 名运动员；25fps，平均 170 秒；标注包含技术元素总分 TES、节目内容分 PCS，均来自 9 位专业裁判打分。</li>
-<li><strong>TASD‑2</strong>（2020 ECCV）：606 条双人跳水正面视角视频，平均 4.1s，标注动作起止帧、最终得分。</li>
-<li><strong>Rhy.Gym（艺术体操数据集）</strong>（2020 ACM MM）：1000 条艺术体操比赛视频，球、棒、圈、带四类器械各 250 条样本，平均 95 秒；标注难度分、完成分、总分（难度 + 完成）。</li>
-<li><strong>FR‑FS</strong>（2020 ACM MM）：417 条花样滑冰样本，起跳、旋转、落冰关键动作，276 条平稳落冰、141 条摔倒样本，二元正误标签。</li>
-<li><strong>SMART</strong>（2021 IJCV）：5000 条样本，10 个运动项目，平均 420 帧；子动作标签与评估分数。</li>
-<li><strong>FineDiving</strong>（2022 CVPR）：3000 条跳水赛事视频，52 种动作类型、29 种子动作、23 个难度等级，平均 4.2 秒；双层语义与时间结构标注，动作级、步骤级标签，以及时间边界；使用赛事裁判原始分数。</li>
-<li><strong>LOGO</strong>（2023 CVPR）：花样游泳长视频多人数据集。200 条赛事样本，每帧画面 8 名运动员；平均时长 204.2 秒；逐帧标注 12 种动作、17 种队形，裁判分项得分与总分。</li>
-<li><strong>FineFS</strong>（2023 ACM MM）：72 场国际 A 级花样滑冰赛事，1167 条样本，RGB + 骨骼，平均 215 秒；四级分数、两层子动作类别、时间分割标注，适配 ISU 新赛季规则。</li>
-<li><strong>PaSk</strong>（2023 IJCV）：双人花样滑冰数据集，1018 条样本；双人存在主次协作关系；标注独立动作起止帧、裁判打分，平均 10.7 秒。</li>
-</ul>
-</blockquote>
-<h4 id="2-1-4-部分方法"><a href="#2-1-4-部分方法" class="headerlink" title="2.1.4 部分方法"></a>2.1.4 部分方法</h4><h5 id="2-1-4-1-不确定性建模方法与对比学习方法"><a href="#2-1-4-1-不确定性建模方法与对比学习方法" class="headerlink" title="2.1.4.1 不确定性建模方法与对比学习方法"></a>2.1.4.1 不确定性建模方法与对比学习方法</h5><p><img src="/2026/08/22/20260814/image-5.png" alt="imageinsert"></p>
-<blockquote>
-<p>公平一直是竞技体育的核心关切。尽管设置多裁判打分体系来尽可能保障比赛公平，但依然存在各类偏见：例如本国选手偏袒的民族主义偏见 [155,156]，裁判偏爱高难度动作的难度偏见 [157]。早期基础研究 [2,3,14,16,17,30,58] 直接把裁判打分作为真值，没有考虑主观评估带来的不确定性与歧义。直接依赖主观分数，影响模型精度与公平性，阻碍实际落地应用。因此，如何从现有打分标签挖掘有效信息、提升 AQA 精度，成为研究热点。研究者引入不确定性建模 [158‑163]、对比回归 [31,164] 等方法，降低人打分带来的主观偏见。代表性工作简要说明与性能见图 13、表 5。</p>
-<p>Tang 等人 [158] 最早将不确定性建模引入 AQA，缓解多位裁判主观打分带来的标签固有歧义，提出不确定性感知分数分布学习 USDL。该方法将标签分数建模为高斯分布，计算输入视频预测分数分布；最小化两个分布之间 KL 散度，优化网络，更好拟合真实打分过程。借鉴奥运会多裁判体系，USDL 可以扩展为多分支，不同分支输出分数加权融合得到最终结果。其他研究者进一步拓展基于不确定性的方法。Zhou 等人 [159] 提出 UDAQA 不确定性驱动 AQA，由确定性分支与隐变量分支组成；确定性分支 I3D [66] 提取视频特征；隐变量分支利用条件变分自编码器 CVAE 建模视频固有的歧义；两个分支结合预测分数。Li 等人 [161] 提出高斯引导帧序列编码器网络；ResNet [68] 提取视频特征，送入时序编码器卷积网络 TECN 提取动作时空语义信息；使用高斯损失最大化预测分数拟合标签分布的概率。Zhang 等人 [163] 提出分布自编码器 DAE 回归模型；将视频特征编码为分数分布，利用重参数技巧采样预测结果，同时学习分数与不确定性。Majeedi 等人 [162] 提出 RICA2，基于评分细则做校准式动作评估；将动作步骤、评分准则表示为有向无环图 DAG；GNN 为每个动作步骤生成概率嵌入，向上传播计算最终分数，捕捉打分流程中的不确定性。</p>
-<p>和不确定性建模不同，对比回归 [31,154,164‑167] 通过样本与参考视频做对比，降低主观打分偏差。Jain 等人 [164,168] 提出参考引导回归 RGR，把动作打分任务转化为动作视频相似度打分任务；使用 Siamese‑LSTM 网络成对处理视频，C3D [64] 提取片段特征送入 LSTM 生成全局动作特征；拼接特征送入回归模型输出相似度判断。RGR 还可以计算样本与参考视频片段相似度，实现更细粒度、可解释打分。Yu 等人 [31] 提出 CoRe 对比回归框架；依据动作类别与难度，为每个样本视频选择参考视频；I3D 提取成对时空特征，结合参考分数，送入群组感知回归树 GART；GART 由粗到细对特征分类，回归两个视频之间分数差值。</p>
-</blockquote>
-<h5 id="2-1-4-2-Multitask-Multimodal-AQA"><a href="#2-1-4-2-Multitask-Multimodal-AQA" class="headerlink" title="2.1.4.2 Multitask &amp; Multimodal AQA"></a>2.1.4.2 Multitask &amp; Multimodal AQA</h5><p><img src="/2026/08/22/20260814/image-8.png" alt="imageinsert"><br><img src="/2026/08/22/20260814/image-6.png" alt="imageinsert"></p>
-<table>
-<thead>
-<tr>
-<th>模型名称</th>
-<th>文献</th>
-<th>模态&#x2F;任务</th>
-<th>核心模块</th>
-<th>核心创新与特点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>C3D‑AVG‑MTL</td>
-<td>Parmar &amp; Morris [21,178]</td>
-<td>RGB视频；多任务（打分+动作分类+文本字幕生成）</td>
-<td>C3D共享骨干网络，多任务分支（分数回归、动作分类、字幕生成）</td>
-<td><strong>首个AQA多任务框架</strong>；把文本模态引入AQA；端到端联合训练，同时输出打分+细粒度动作自然语言描述</td>
-</tr>
-<tr>
-<td>SGN（语义引导网络）</td>
-<td>Du et al. [169]</td>
-<td>RGB视频 + 语义知识</td>
-<td>师生架构、可学习原子查询、注意力机制、多对齐损失</td>
-<td>教师网络注入语义知识，学生网络做适配；实现视觉‑语义特征对齐</td>
-</tr>
-<tr>
-<td>VATP‑Net（视觉‑语义对齐时序解析网络）</td>
-<td>Gedamu et al. [174]</td>
-<td>RGB视频 + 语义</td>
-<td>自监督时序解析模块、多模态交互模块</td>
-<td>无需外部标注；挖掘动作内部时序结构，学习场景无关的动作执行表征</td>
-</tr>
-<tr>
-<td><strong>NAE（叙事动作评估）</strong></td>
-<td>Zhang et al. [177]</td>
-<td>RGB视频 + 文本生成</td>
-<td>视频编码器、多头交叉注意力提示学习、分数引导token、三token注意力掩码</td>
-<td>将打分回归转为视频‑文本匹配任务；直接输出包含动作细节、分数的完整自然语言评估报告</td>
-</tr>
-<tr>
-<td>ST‑GCN（时空图卷积网络）</td>
-<td>Li et al. [25]</td>
-<td>骨骼姿态</td>
-<td>时空图卷积GCN</td>
-<td>在时空维度提取骨骼与深度姿态特征，回归动作质量分数</td>
-</tr>
-<tr>
-<td>MS‑GCN（多骨骼结构图卷积网络）</td>
-<td>Lei et al. [170]</td>
-<td>长视频骨骼序列</td>
-<td>多类型骨骼图、时序注意力模块</td>
-<td>将长骨骼序列切分；构建自连接&#x2F;部件内&#x2F;部件间三类图，适配长视频评估</td>
-</tr>
-<tr>
-<td>RI</td>
-<td>Zheng et al. [172]</td>
-<td>骨骼姿态</td>
-<td>关节相对方向点积矩阵</td>
-<td>消除人体朝向干扰，解决模型对朝向变化敏感问题</td>
-</tr>
-<tr>
-<td>EGCN++</td>
-<td>Bruce et al. [29]</td>
-<td>骨骼姿态</td>
-<td>图卷积、集成学习；数据集重标注</td>
-<td>数据层融合位置+朝向；集成多个GCN预测；重标注KIMORE数据集为二分类标签，提升鲁棒性</td>
-</tr>
-<tr>
-<td>2M‑AF（多模态评估框架）</td>
-<td>Ding et al. [173]</td>
-<td>RGB视频 + 骨骼</td>
-<td>SME‑GCN、I3D、偏好融合模块PFM</td>
-<td>分别提取骨骼、RGB特征，通过偏好融合模块完成多模态特征融合后回归分数</td>
-</tr>
-<tr>
-<td>EK‑GCN</td>
-<td>He et al. [175]</td>
-<td>骨骼姿态</td>
-<td>专家知识加权GCN、门控池化、Transformer</td>
-<td>专家知识引导图权重，聚焦关键关节；门控聚合，Transformer建模长时序依赖</td>
-</tr>
-<tr>
-<td>DNLA（判别式非局部注意力）</td>
-<td>Zahan et al. [176,190]</td>
-<td>RGB视频 + 骨骼</td>
-<td>跨时序稀疏特征提取</td>
-<td>过滤冗余信息，强制模型聚焦关键动作片段、关键帧</td>
-</tr>
-<tr>
-<td>PISA</td>
-<td>Parmar et al. [27]</td>
-<td>视频 + 音频</td>
-<td>3DCNN(视频)、2DCNN(音频)、全连接层</td>
-<td>音乐AQA；融合音视频，输出钢琴演奏技能等级</td>
-</tr>
-<tr>
-<td>Skating‑Mixer</td>
-<td>Xia et al. [171]</td>
-<td>视频 + 音频</td>
-<td>CNN、MFCC、带记忆机制MLP</td>
-<td>花样滑冰音视频融合；MLP增加记忆单元，可以复用历史帧信息</td>
-</tr>
-<tr>
-<td>PAMFN（渐进自适应多模态融合网络）</td>
-<td>Zeng &amp; Zheng et al. [23]</td>
-<td>RGB + 光流 + 音频</td>
-<td>多独立模态分支、模态特征解码器、自适应融合模块</td>
-<td>渐进式多模态融合；自适应选择最优融合策略，完成动作质量评估</td>
-</tr>
-</tbody></table>
-<h3 id="2-2-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment"><a href="#2-2-CVPR2026-FineGrade-A-Rule-Consistent-Scoring-Framework-for-Fine-Grained-Action-Quality-Assessment" class="headerlink" title="2.2. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment"></a>2.2. CVPR2026 FineGrade: A Rule-Consistent Scoring Framework for Fine-Grained Action Quality Assessment</h3><p>github：<a target="_blank" rel="noopener" href="https://github.com/yicong1/FineGym-AQA">https://github.com/yicong1/FineGym-AQA</a></p>
-<p>paper：<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Li_FineGrade_A_Rule-Consistent_Scoring_Framework_for_Fine-Grained_Action_Quality_Assessment_CVPRF_2026_paper.pdf">cvpr2026</a></p>
-<p><img src="/2026/08/22/20260814/image-7.png" alt="imageinsert"></p>
-<p><img src="/2026/08/22/20260814/image-10.png" alt="imageinsert"><br>视觉主干采用在 Kinetics 预训练的 VST</p>
-<p><strong>论文局限：</strong> FineGym‑AQA 数据集来自官方比赛成绩册。成绩册可以拿到每个动作的 D 价值，但是拿不到每个动作分别扣了多少 E 分，只有整套 E 的最终数字。<br>模型的E分也是在整体上的预测，可解释性存疑。</p>
-<h2 id="3-局限性"><a href="#3-局限性" class="headerlink" title="3. 局限性"></a>3. 局限性</h2><h3 id="3-1-评分标准有变化"><a href="#3-1-评分标准有变化" class="headerlink" title="3.1 评分标准有变化"></a>3.1 评分标准有变化</h3><p>注意到竞技体操的评分标准是会根据奥运赛季有变化的，过往的数据集里的E分有可能只适用于当年的情况，这对模型回归可能存在干扰。</p>
-<h3 id="3-2-主观分数的不确定性"><a href="#3-2-主观分数的不确定性" class="headerlink" title="3.2 主观分数的不确定性"></a>3.2 主观分数的不确定性</h3><blockquote>
-<p>尽管设置多裁判打分体系来尽可能保障比赛公平，但依然存在各类偏见：例如本国选手偏袒的民族主义偏见 [155,156]，裁判偏爱高难度动作的难度偏见 [157]。早期基础研究 [2,3,14,16,17,30,58] 直接把裁判打分作为真值，没有考虑主观评估带来的不确定性与歧义。直接依赖主观分数，影响模型精度与公平性，阻碍实际落地应用。</p>
-</blockquote>
-<h3 id="3-3-数据集"><a href="#3-3-数据集" class="headerlink" title="3.3 数据集"></a>3.3 数据集</h3><p>1）跳水的数据集非常多，但竞技体操的数据有限，看是否还能扩充。<br>2）缺少高帧率数据，高帧率数据能够消除伪影等影响<br>3）AIGC数据可能可以增加数据规模，例如在原视频上可控的微调运动员姿态，生成项目上不同的分值，反馈给模型做训练</p>
-<h3 id="3-4-模态"><a href="#3-4-模态" class="headerlink" title="3.4 模态"></a>3.4 模态</h3><p>现在在跳水领域，已经有视频-文本-骨骼姿态-光流 等模态的融合，看竞技体操能否移植或者。另外可以考虑在数据采集上增加模态，例如：<br>1）多视角数据，消除遮挡物影响；<br>2）声音，不过现场噪音会带干扰信号，仅是一种思路：a.入水撞击水面的声音，水花越小撞击声越小；b. 竞技体操：落地撞击垫子的响度，判断落地冲击大小、是否重重砸地扣分；c. 艺术体操：动作与背景音乐节拍同步性分析</p>
-<h3 id="3-5-E分粒度"><a href="#3-5-E分粒度" class="headerlink" title="3.5 E分粒度"></a>3.5 E分粒度</h3><blockquote>
-<p>E 组裁判盯着整套成套，<strong>每看到一处错误就记录这个错误以及扣多少分</strong>：</p>
-<ul>
-<li>某个空翻落地踩一步：‑0.1</li>
-<li>做跳转动作膝盖弯了：‑0.1</li>
-</ul>
-<ol>
-<li>但是：<strong>裁判不会给每个动作算一个 “子 E 分数”</strong>。而是全部错误扣分累加，从满分<strong>10.0</strong>往下整体扣减，输出<strong>整套唯一的 E 分</strong>。<br><img src="/2026/08/22/20260814/image-11.png" alt="imageinsert"></li>
-</ol>
-</blockquote>
-<p>模型算出的E分可解释性不稳定，可能来自于此，我们需要让模型指出是具体哪个动作导致的E分扣分。这需要人工逐帧标注<strong>每个动作上的 E 扣分数值</strong>，或者考虑让大模型根据现有数据集视频和总打分给出高可信的文字标注，标注请专业人士审核，构建新的数据集。</p>
-<h2 id="TODOs"><a href="#TODOs" class="headerlink" title="TODOs:"></a>TODOs:</h2><h3 id="1-下载数据集FingGym-AQA，复现FineGrade"><a href="#1-下载数据集FingGym-AQA，复现FineGrade" class="headerlink" title="1. 下载数据集FingGym-AQA，复现FineGrade"></a>1. 下载数据集FingGym-AQA，复现FineGrade</h3><h3 id="2-测试大模型标注FingGym-AQA细粒度E分的结果"><a href="#2-测试大模型标注FingGym-AQA细粒度E分的结果" class="headerlink" title="2. 测试大模型标注FingGym-AQA细粒度E分的结果"></a>2. 测试大模型标注FingGym-AQA细粒度E分的结果</h3><h3 id="3-读后面不确定性建模和多模态AQA方法的论文"><a href="#3-读后面不确定性建模和多模态AQA方法的论文" class="headerlink" title="3. 读后面不确定性建模和多模态AQA方法的论文"></a>3. 读后面不确定性建模和多模态AQA方法的论文</h3><h3 id="others："><a href="#others：" class="headerlink" title="others："></a>others：</h3><ol>
-<li><p>Xumin Yu, Yongming Rao, Wenliang Zhao, Jiwen Lu,and Jie Zhou. Group-aware contrastive regression for action quality assessment. In Proceedings of the IEEE&#x2F;CVF International Conference on Computer Vision, pages 7919–7928</p>
-</li>
-<li><p>Yansong Tang, Zanlin Ni, Jiahuan Zhou, Danyang Zhang,  Jiwen Lu, Ying Wu, and Jie Zhou. Uncertainty-aware score distribution learning for action quality assessment. In Proceedings of the IEEE&#x2F;CVF Conference on Computer Vision and Pattern Recognition, pages 9839–9848, 2020. 17, 18, 19 </p>
-</li>
-<li><p>Caixia Zhou, Yaping Huang, and Haibin Ling.  Uncertainty-driven action quality assessment. arXiv preprint arXiv:2207.14513, 2022. 17, 18, 19 </p>
-</li>
-<li><p>Anandi Karunaratne, Chamin Jayasooriya, Sampath  Deegalla, and Rajitha Navarathna. Objectively measure player performance on olympic weightlifting. In International Conference on Information and Automation for Sustainability, pages 410–415. IEEE, 2021. 17 </p>
-</li>
-<li><p>Ming-Zhe Li, Hong-Bo Zhang, Li-Jia Dong, Qing Lei,  and Ji-Xiang Du. Gaussian guided frame sequence encoder network for action quality assessment. Complex &amp; Intelligent Systems, 9(2):1963–1974, 2023. 17, 18, 19 </p>
-</li>
-<li><p>Abrar Majeedi, Viswanatha Reddy Gajjala, Satya Sai  Srinath Namburi GNVV, and Yin Li. Rica2: Rubricinformed, calibrated assessment of actions. arXiv preprint arXiv:2408.02138, 2024. 17, 18, 19</p>
-</li>
-<li><p>Boyu Zhang, Jiayuan Chen, Yinfei Xu, Hui Zhang,  Xu Yang, and Xin Geng. Auto-encoding score distribution regression for action quality assessment. Neural Computing and Applications, 36(2):929–942, 2024. 17, 18, 19 164. Hiteshi Jain, Gaurav Harit, and Avinash Sharma. Action  quality assessment using siamese network-based deep metric learning. IEEE Transactions on Circuits and Systems for Video Technology, 31(6):2260–2273, 2021. 17, 18, 19</p>
-</li>
-<li><p>Hiteshi Jain, Gaurav Harit, and Avinash Sharma. Action quality assessment using siamese network-based deep metric learning. IEEE Transactions on Circuits and Systems for Video Technology, 31(6):2260–2273, 2021</p>
-</li>
-</ol>
 
       
     </div>
